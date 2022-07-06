@@ -34,12 +34,19 @@ import PopularGame from "../../../components/PopularGame.svelte";
     let name = arrayofgames.displayName;
 
     let arraygames = arrayofgames.backlog
-function homeButton() {
-    goto(`https://hcg-games-hcg.netlify.app/user/home/${arrayofgames.name}`)
+    function homeButton() {
+    goto(`../../user/home/${name.toLowerCase()}`)
 }
-
 function gamesButton() {
-    goto(`https://hcg-games-hcg.netlify.app/user/games/${arrayofgames.name}`)
+    goto(`../../user/games/${name.toLowerCase()}`)
+}
+function backlogButton() {
+    goto(`../../user/backlog/${name.toLowerCase()}`)
+
+}
+function reviewsButton() {
+    goto(`../../user/reviews/${name.toLowerCase()}`)
+
 }
 
 
@@ -76,10 +83,10 @@ onMount(async () => {
 </h1>
 
 <div class="buttons">
-    <button on:click={homeButton} id= "backlog" type="button" class="btn btn-primary">Profile</button>
-    <button disabled id= "backlog" type="button" class="btn btn-primary">Backlog</button>
+    <button id= "backlog" type="button" class="btn btn-primary" on:click={homeButton}>Profile</button>
     <button on:click={gamesButton} id= "backlog" type="button" class="btn btn-primary">Games</button>
-
+    <button on:click={reviewsButton} id= "backlog" type="button" class="btn btn-primary">Reviews</button>
+    <button disabled id= "backlog" type="button" class="btn btn-primary">Backlog</button>
 </div>
 
 

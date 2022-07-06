@@ -24,7 +24,9 @@
    <script>
     import  { goto } from "$app/navigation";
     import Rating from "../../components/Rating.svelte"
+    import ReviewCard from "../../components/ReviewCard.svelte"
     import App from "../fb";
+    import ReviewTest from "../../components/ReviewTest.svelte"
    import {onMount } from 'svelte';
    import { each } from "svelte/internal";
    import { fly } from "svelte/transition";
@@ -39,12 +41,15 @@ let errorMessage = "";
    let isFav;
     let signedIn = false;
     let isPlayed;
+    let name;
+    let uniqueName;
 
 
     auth.onAuthStateChanged(function(user) {
   if (user) {
    signedIn = true;
    uid = auth.currentUser.uid
+   name = auth.currentUser.displayName
 
   } else {signedIn = false;
   }}
@@ -252,6 +257,28 @@ onMount(async () => {
         isPlayed = true
     }
 
+    async function getName() {
+    let user = auth.currentUser
+    if(user){
+    const usersDoc = collection(db, "users")
+        let q = query(usersDoc, where("uid", "==", user.uid));
+        const querySnapshot = await getDocs(q);
+        let docId;
+        let currentPlayed;
+        let currentName;
+        querySnapshot.forEach((doc) => {
+        docId = doc.id;
+        currentPlayed = doc.data().displayName
+        currentName = doc.data().name
+        
+
+}); 
+name = currentPlayed
+uniqueName = currentName}
+}
+
+getName()
+
 
     return currentBacklog;
 }
@@ -260,6 +287,7 @@ onMount(async () => {
   } 
 )
 })
+
 
 
 async function checkIfPlayed() {
@@ -288,6 +316,10 @@ if(currentPlayed.indexOf(searchedGame.id)===-1){
 
        let comapanies = []
        let hash = searchedGame.screenshots[0].image_id
+       let hashArray = []
+       for(let hash of searchedGame.screenshots) {
+           hashArray.push(hash.image_id)
+       }
       try {for(let company of searchedGame.involved_companies) {
            comapanies.push(" " + company.company.name)
        }} catch {
@@ -306,72 +338,101 @@ if(currentPlayed.indexOf(searchedGame.id)===-1){
 
    </script>
 <div class="game-info" in:fly={{y: 50, duration: 400, delay:500}} out:fly={{duration: 500}}>
-    <div class="image">
-    <img class="rounded mx-auto d-block" src={`https://images.igdb.com/igdb/image/upload/t_screenshot_big/${hash}.jpg`} alt={searchedGame.name}>
-
-   </div>
-   <div class="text-container">
-
-    <h1>{searchedGame.name}</h1>
-    <p class="overview">{searchedGame.summary}</p>
-    <p>
-        <span>Developers/Publishers</span>
-        {comapanies} <br />
-        <span>Platform(s)</span> {platformsString}<br />
-        <span>Genre(s):</span>
-        {genresString} 
-    </p>
-    {#if (signedIn)}
-    <div class="user-options">
-        {#if (!isInBacklog)}
-        <button on:click={backlogFunction} type="button" class="btn btn-primary">Add to backlog</button>
-        {:else} 
-        <button on:click={backlogFunctionRemove} type="button" class="btn btn-danger">Remove from backlog</button>
-
-  {/if} 
-    
-{#if (!isFav)}
-<button on:click={favouriteFunction} type="button" class="btn btn-primary">Add to favourites</button>
-{:else} 
-    <button on:click={favouriteFunctionRemove} type="button" class="btn btn-danger">Remove from favourites</button>
-
-{/if} 
 
 
-<!---
-{#if (!isPlayed)}
-<button on:click={playedFunction} type="button" class="btn btn-success">Played</button>
-{:else} 
-    <button on:click={playedFunctionRemove} type="button" class="btn btn-danger">Remove from Played</button>
-
-{/if} 
-
-
--->
-
-
-
-
-
-        
-
-    
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="border-radius: 0.5rem;">
+ 
+     <div class="carousel-indicators">
+ 
+         {#each hashArray as hashthing, index}
+         {#if (index===0)}
+         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to={index} class="active" aria-current="true" aria-label={`Screenshot ${index+1}`}></button>
+         
+         {:else}
+         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to={index} aria-label={`Screenshot ${index+1}`}></button>
+         {/if}
+         {/each}
+ 
+       </div>
+ 
+     <div class="carousel-inner">
        
-
-        <p class="error">{errorMessage}</p>
-    </div>
-<h5>Rate this game</h5>
-<Rating {game} {uid}></Rating>
-    
-    {/if}
-
-    
-
-
-   
+       {#each hashArray as hashitem, index}
+       {#if (index===0)}
+       <div class="carousel-item active">
+         <img style="border-radius: 0.5rem;" src={`https://images.igdb.com/igdb/image/upload/t_screenshot_big/${hashitem}.jpg`} alt={searchedGame.name} class="d-block w-100" >
+     </div>
+         {:else} <div class="carousel-item">
+             <img style="border-radius: 0.5rem;" src={`https://images.igdb.com/igdb/image/upload/t_screenshot_big/${hashitem}.jpg`} alt={searchedGame.name} class="d-block w-100" >
+ 
+         </div>
+     
+         {/if}
+        
+       {/each}
+       
+       
+     </div>
+     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+       <span class="visually-hidden">Previous</span>
+     </button>
+     <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+       <span class="carousel-control-next-icon" aria-hidden="true"></span>
+       <span class="visually-hidden">Next</span>
+     </button>
    </div>
-</div>
-   
+ 
+    <div class="text-container">
+ 
+     <h1>{searchedGame.name}</h1>
+     <p class="overview">{searchedGame.summary}</p>
+     <p>
+         <span>Developers/Publishers</span>
+         {comapanies} <br />
+         <span>Platform(s)</span> {platformsString}<br />
+         <span>Genre(s):</span>
+         {genresString} 
+     </p>
+     {#if (signedIn)}
+     <div class="user-options">
+         {#if (!isInBacklog)}
+         <button on:click={backlogFunction} type="button" class="btn btn-primary">Add to backlog</button>
+         {:else} 
+         <button on:click={backlogFunctionRemove} type="button" class="btn btn-danger">Remove from backlog</button>
+ 
+   {/if} 
+     
+ {#if (!isFav)}
+ <button on:click={favouriteFunction} type="button" class="btn btn-primary">Add to favourites</button>
+ {:else} 
+     <button on:click={favouriteFunctionRemove} type="button" class="btn btn-danger">Remove from favourites</button>
+ 
+ {/if} 
+ 
+
+ 
+         <p class="error">{errorMessage}</p>
+     </div>
+ 
+ 
+
+
+ {#if name}
+ {#if uniqueName}
+ <ReviewTest game={searchedGame.id} uid={name} name={uniqueName} gamename={searchedGame.name}></ReviewTest> 
+{/if}
+ {/if}
+     {/if}
+ 
+     
+ 
+ 
+    
+    </div>
+ </div>
+    
+    
    
 <style>
 
@@ -402,9 +463,7 @@ if(currentPlayed.indexOf(searchedGame.id)===-1){
     p {
         padding: 1rem 0rem;
     }
-    .image {
-        widows: 100%;
-    }
+
     img {
         width: 100%;
         border-radius: 1rem;

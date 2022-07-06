@@ -105,44 +105,37 @@ export const dubey = played;
 
 
 
-<div class="everything">
 
 
 
 
 
 
-    <div class="form-form">
-        <div class="number">
-            <label for="customRange3" class="form-label"><p class="text">{rating}</p>
-            </label> 
-          </div>
-        <input bind:value={rating} type="range" class="form-range" min="0" max="5" step="0.5" id="customRange3">
-       
-       
-        
+
+
+  <div class="card" style="width: 100%;">
+    <div class="card-body">
+      <h5 class="card-title">Rate this game</h5>
+      <div class="slider-and-label">
+        <label id="label" for="customRange3" class="form-label"><p class="text">{rating}</p></label> 
+        <input bind:value={rating} type="range" class="form-range slider" min="0" max="5" step="0.5" id="customRange3"> 
       </div>
-    
-    
-    
-      <div class="stars-and-submit">
-          
-        
-       
+
+      <div class="submit-and-stars">
         {#if (!submittedRating)}
         <button on:click={submitRating} type="button" class="btn btn-primary" id="button">Submit Rating</button>
         <StarRating rating={0} />
         {:else} <button on:click={updateRating} type="button" class="btn btn-primary update-submit" id="button">Update Rating</button>
-        <StarRating rating={submittedRating} />
-        
+        <StarRating rating={submittedRating} />      
         {/if}
-      
-        
-       
-      
+
       </div>
 
-</div>
+
+        
+    </div>
+  </div>
+  
 
  
   
@@ -151,44 +144,47 @@ export const dubey = played;
   
   
   <style>
+
+
+#label {
+  position: absolute;
+  right: 15rem;
+  font-weight: bolder;
+
   
 
-  .update-submit {
-    margin-left: 1rem;
-  }
-  .everything {
-      display:inline-flex;
-      width: 100%;
-  }
-  .form-form {
-    height: 100%;
-    width: 60%;
-  }
+}
 
-  .stars-and-submit {
-    align-items: right;
-   justify-content: right;
-   align-content: right;
-   margin-left: auto;
-  }
-  
-  .number {
-      height: 60px;
-      width: 60px;
-      float: right;
-  }
-  
-    #button {
-        
-      margin-top: 16px;
-      margin-bottom: 16px;
+.submit-and-stars {
+  margin-top: 5rem;
+}
+
+.slider {
+  position: absolute;
+  left: 0px;
+  width: 60%;
+  padding: 10px;
+}
+  .slider-and-label {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 2rem;
+      margin-bottom: 4rem;
     }
-    .text {
+
+    button {
+      margin-bottom: 1rem;
+    }
+
+
+
+/*    .text {
       margin-top: 16px;
       font-weight: bolder;
       padding: 16px;
     }
-    .form-range {
+   .form-range {
       width: 100%;
-    }
+    }*/
   </style>

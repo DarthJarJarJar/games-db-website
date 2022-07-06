@@ -35,7 +35,8 @@ import PopularGame from "../../../components/PopularGame.svelte";
     let backlogButton;
     let gamesButton;
     let arraygames;
-
+    let homeButton;
+    let reviewsButton;
 
 
     if(arrayofgames) {
@@ -44,10 +45,17 @@ import PopularGame from "../../../components/PopularGame.svelte";
 
 arraygames = arrayofgames.favourites
 backlogButton = () => {
-goto(`https://hcg-games-hcg.netlify.app/user/backlog/${arrayofgames.name}`)
+    goto(`../../user/backlog/${name.toLowerCase()}`)
+
 }
 gamesButton = () => {
-goto(`https://hcg-games-hcg.netlify.app/user/games/${arrayofgames.name}`)
+    goto(`../../user/games/${name.toLowerCase()}`)
+}
+homeButton = () => {
+    goto(`../../user/home/${name.toLowerCase()}`)
+}
+reviewsButton = () => {
+    goto(`../../user/reviews/${name.toLowerCase()}`)
 }
 onMount(async () => {
 
@@ -95,7 +103,9 @@ await fetch(`https://powerful-fjord-21607.herokuapp.com/https://api.igdb.com/v4/
 <div class="buttons">
     <button id= "backlog" type="button" class="btn btn-primary" disabled>Profile</button>
     <button on:click={gamesButton} id= "backlog" type="button" class="btn btn-primary">Games</button>
+    <button on:click={reviewsButton} id= "backlog" type="button" class="btn btn-primary">Reviews</button>
     <button on:click={backlogButton} id= "backlog" type="button" class="btn btn-primary">Backlog</button>
+
 </div>
 
 

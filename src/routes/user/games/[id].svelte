@@ -43,13 +43,21 @@ import StarRating from 'svelte-star-rating';
 
     console.log(arraygames)
 
+    function homeButton() {
+    goto(`../../user/home/${name.toLowerCase()}`)
+}
+function gamesButton() {
+    goto(`../../user/games/${name.toLowerCase()}`)
+}
 function backlogButton() {
-    goto(`https://hcg-games-hcg.netlify.app/user/backlog/${arrayofgames.name}`)
+    goto(`../../user/backlog/${name.toLowerCase()}`)
+
+}
+function reviewsButton() {
+    goto(`../../user/reviews/${name.toLowerCase()}`)
+
 }
 
-function homeButton() {
-    goto(`https://hcg-games-hcg.netlify.app/user/home/${arrayofgames.name}`)
-}
 
 onMount(async () => {
   
@@ -92,8 +100,9 @@ function getRating(game) {
 </h1>
 
 <div class="buttons">
-    <button on:click={homeButton} id= "backlog" type="button" class="btn btn-primary">Profile</button>
+    <button id= "backlog" type="button" class="btn btn-primary" on:click={homeButton}>Profile</button>
     <button disabled id= "backlog" type="button" class="btn btn-primary">Games</button>
+    <button on:click={reviewsButton} id= "backlog" type="button" class="btn btn-primary">Reviews</button>
     <button on:click={backlogButton} id= "backlog" type="button" class="btn btn-primary">Backlog</button>
 
 </div>
@@ -108,7 +117,7 @@ function getRating(game) {
     {#if (arraygames != [])} 
 
     {#each continents as game}
-        <RatedGame game={game} rating={getRating(game)} />
+        <RatedGame game={game} rating={getRating(game)} gamename={game.name} />
     
   {/each}
   <br>

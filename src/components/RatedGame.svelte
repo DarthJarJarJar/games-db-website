@@ -3,7 +3,9 @@
     export let rating;
     console.log(rating)
     import StarRating from 'svelte-star-rating';
-
+    const config = {
+       showText: true,
+     };
 </script>
 
 {#if (game.id)}
@@ -12,7 +14,7 @@
         <img src={`https://images.igdb.com/igdb/image/upload/t_cover_big/${game.cover.image_id}.jpg`} alt = {game.name}></a>   
         <div class="description">
             <h2>{game.name}</h2>
-            <StarRating rating={rating}></StarRating>
+            <StarRating rating={rating} {config}></StarRating>
             
         </div>
     </div>
