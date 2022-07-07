@@ -23,11 +23,13 @@ console.log(data)
 </script>
 <script>
        import  { goto, invalidate } from "$app/navigation";
+       import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth'
+
    import { each } from "svelte/internal";
    import { fly } from "svelte/transition";
 import { onMount } from 'svelte';
 import RatedGame from "../../../components/RatedGame.svelte";
-import StarRating from 'svelte-star-rating';
+import StarRating from '../../../svelte-star-rating';
 
 
     let favs;

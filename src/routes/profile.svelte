@@ -33,7 +33,7 @@ function gamesButton() {
         auth.onAuthStateChanged(async function(user) {
   if (user) {
 
-
+    
     let user = auth.currentUser
     let db = getFirestore()
         const usersDoc = collection(db, "users")
@@ -48,6 +48,8 @@ function gamesButton() {
             console.log(doc.data())
             
 }); 
+goto(`/user/home/${name.toLowerCase()}`)
+
 
 arrayofgames = favs
 console.log(arrayofgames)

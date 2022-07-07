@@ -13,7 +13,7 @@
    import App from "../../src/routes/fb"
    const db = getFirestore(App)
    
-   import StarRating from 'svelte-star-rating';
+   import StarRating from '../svelte-star-rating';
        let ratingNum;
        let review;
        let isRated = false;

@@ -7,7 +7,7 @@
     export let uid;
     let played;
     console.log(game)
-    import StarRating from 'svelte-star-rating';
+    import StarRating from '../svelte-star-rating';
     
     let rating = 0;
     let submittedRating;

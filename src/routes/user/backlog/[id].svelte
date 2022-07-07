@@ -27,6 +27,8 @@ console.log(data)
    import { fly } from "svelte/transition";
 import { onMount } from 'svelte';
 import PopularGame from "../../../components/PopularGame.svelte";
+import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth'
+
 
     let favs;
     let continents;

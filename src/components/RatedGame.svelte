@@ -2,7 +2,7 @@
     export let game;
     export let rating;
     console.log(rating)
-    import StarRating from 'svelte-star-rating';
+    import StarRating from '../../src/svelte-star-rating';
     const config = {
        showText: true,
      };

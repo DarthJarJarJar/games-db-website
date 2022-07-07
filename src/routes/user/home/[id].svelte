@@ -22,7 +22,9 @@ console.log(data)
 
 </script>
 <script>
+    
        import  { goto, invalidate } from "$app/navigation";
+       import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth'
    import { each } from "svelte/internal";
    import { fly } from "svelte/transition";
 import { onMount } from 'svelte';
@@ -38,7 +40,20 @@ import PopularGame from "../../../components/PopularGame.svelte";
     let homeButton;
     let reviewsButton;
 
-
+const auth = getAuth(App)
+let loggedIn;
+console.log(arrayofgames)
+auth.onAuthStateChanged((user) => {
+  
+       if(user) {
+           if(user.uid===arrayofgames.uid) {
+            loggedIn = true
+           }
+           
+       }
+   
+    
+})
     if(arrayofgames) {
         doesUserExist = true
         name = arrayofgames.displayName;
@@ -82,6 +97,12 @@ await fetch(`https://powerful-fjord-21607.herokuapp.com/https://api.igdb.com/v4/
        
 
  
+    const logout = async () => {
+    signOut(auth).then(() => {goto("/")
+}).catch((error) => {
+  console.error(error)
+});
+}
 
    
 
@@ -104,7 +125,12 @@ await fetch(`https://powerful-fjord-21607.herokuapp.com/https://api.igdb.com/v4/
     <button id= "backlog" type="button" class="btn btn-primary" disabled>Profile</button>
     <button on:click={gamesButton} id= "backlog" type="button" class="btn btn-primary">Games</button>
     <button on:click={reviewsButton} id= "backlog" type="button" class="btn btn-primary">Reviews</button>
+   
     <button on:click={backlogButton} id= "backlog" type="button" class="btn btn-primary">Backlog</button>
+    {#if loggedIn}
+    <button on:click={logout} id= "backlog" type="button" class="btn btn-danger">Sign Out</button>
+
+    {/if}
 
 </div>
 

@@ -8,6 +8,15 @@ const db = getFirestore(App);
         orderBy("reviewAt", "desc")
         );
       
+        let username;
+        const userQ = query(collection(db, "users"), 
+        where("name", "==", params.id));
+        const userQuerySnapshot = await getDocs(userQ)
+        userQuerySnapshot.forEach((doc) => {
+            username = doc.data().displayName
+            console.log(username)
+        })
+
 
 let data;
 const querySnapshot = await getDocs(q);
@@ -18,20 +27,27 @@ array.push(data)
 
     
 });
-
-        return {
-            props : {reviewData : array}
+       
+            return {
+            props : {reviewData : array,
+                userName : username},
+            
         }
+       
+        
     }
 
 </script>
 <script>
-import StarRating from 'svelte-star-rating';
+import StarRating from '../../../svelte-star-rating';
 import { fly } from 'svelte/transition'
 import {goto} from '$app/navigation';
 import { FirebaseError } from "firebase/app";
+import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth'
+
 export let reviewData;
-console.log(reviewData)
+export let userName;
+console.log(userName)
 function getProperDate(timestamp) {
     let properDate = ""
     const date = new Date(timestamp)
@@ -48,17 +64,17 @@ for(let review of reviewData) {
 }
 
 function homeButton() {
-    goto(`../../user/home/${name.toLowerCase()}`)
+    goto(`../../user/home/${userName.toLowerCase()}`)
 }
 function gamesButton() {
-    goto(`../../user/games/${name.toLowerCase()}`)
+    goto(`../../user/games/${userName.toLowerCase()}`)
 }
 function backlogButton() {
-    goto(`../../user/backlog/${name.toLowerCase()}`)
+    goto(`../../user/backlog/${userName.toLowerCase()}`)
 
 }
 function reviewsButton() {
-    goto(`../../user/reviews/${name.toLowerCase()}`)
+    goto(`../../user/reviews/${userName.toLowerCase()}`)
 
 }
 
@@ -68,7 +84,7 @@ function reviewsButton() {
    
     <div class= "akd">
     <h1>
-        {name}'s Profile
+        {userName}'s Profile
     </h1>
     
     <div class="buttons">
@@ -104,7 +120,7 @@ function reviewsButton() {
            </div>
        </div>
      </div>
-   {/each}
+   {/each} {:else} <p>No reviews yet</p>
    {/if}
 
     
