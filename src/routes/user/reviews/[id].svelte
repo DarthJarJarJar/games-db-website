@@ -9,6 +9,7 @@ const db = getFirestore(App);
         );
       
         let username;
+        console.log("testing")
         const userQ = query(collection(db, "users"), 
         where("name", "==", params.id));
         const userQuerySnapshot = await getDocs(userQ)
