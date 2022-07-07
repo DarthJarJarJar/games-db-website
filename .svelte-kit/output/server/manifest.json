@@ -1,0 +1,322 @@
+{
+  ".svelte-kit/build/index.js": {
+    "file": "index.js",
+    "src": ".svelte-kit/build/index.js",
+    "isEntry": true,
+    "imports": [
+      "_index-38cedc01.js"
+    ],
+    "dynamicImports": [
+      ".svelte-kit/build/hooks.js"
+    ]
+  },
+  "src/routes/store.js": {
+    "file": "entries/endpoints/store.js",
+    "src": "src/routes/store.js",
+    "isEntry": true
+  },
+  "src/routes/fb.js": {
+    "file": "entries/endpoints/fb.js",
+    "src": "src/routes/fb.js",
+    "isEntry": true
+  },
+  "src/routes/__layout.svelte": {
+    "file": "entries/pages/__layout.svelte.js",
+    "src": "src/routes/__layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-38cedc01.js",
+      "src/routes/fb.js"
+    ],
+    "css": [
+      "assets/entries/pages/__layout.svelte-f9784660.css"
+    ]
+  },
+  ".svelte-kit/runtime/components/error.svelte": {
+    "file": "entries/fallbacks/error.svelte.js",
+    "src": ".svelte-kit/runtime/components/error.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-38cedc01.js"
+    ]
+  },
+  "src/routes/dubey.svelte": {
+    "file": "entries/pages/dubey.svelte.js",
+    "src": "src/routes/dubey.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-38cedc01.js"
+    ]
+  },
+  "src/routes/games/[id].svelte": {
+    "file": "entries/pages/games/_id_.svelte.js",
+    "src": "src/routes/games/[id].svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-38cedc01.js",
+      "src/routes/fb.js"
+    ],
+    "css": [
+      "assets/entries/pages/games/_id_.svelte-e5ed47fe.css",
+      "assets/StarRating.svelte_svelte_type_style_lang-e96290e3.css",
+      "assets/ReviewTest.svelte_svelte_type_style_lang-2894b696.css"
+    ]
+  },
+  "src/routes/genres/[id].svelte": {
+    "file": "entries/pages/genres/_id_.svelte.js",
+    "src": "src/routes/genres/[id].svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-38cedc01.js",
+      "_PopularGame-f786c5fc.js"
+    ],
+    "css": [
+      "assets/entries/pages/genres/_id_.svelte-41ad69c2.css",
+      "assets/Game.svelte_svelte_type_style_lang-69c29c62.css",
+      "assets/PopularGame.svelte_svelte_type_style_lang-d7c4bb42.css"
+    ]
+  },
+  "src/routes/igdb.svelte": {
+    "file": "entries/pages/igdb.svelte.js",
+    "src": "src/routes/igdb.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-38cedc01.js"
+    ],
+    "css": [
+      "assets/entries/pages/igdb.svelte-dfd158d9.css",
+      "assets/StarRating.svelte_svelte_type_style_lang-e96290e3.css"
+    ]
+  },
+  "src/routes/index.svelte": {
+    "file": "entries/pages/index.svelte.js",
+    "src": "src/routes/index.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-38cedc01.js",
+      "_PopularGame-f786c5fc.js"
+    ],
+    "css": [
+      "assets/entries/pages/index.svelte-43f9c302.css",
+      "assets/PopularGame.svelte_svelte_type_style_lang-d7c4bb42.css"
+    ]
+  },
+  "src/routes/login.svelte": {
+    "file": "entries/pages/login.svelte.js",
+    "src": "src/routes/login.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-38cedc01.js",
+      "_LoginForm-6c849788.js",
+      "src/routes/fb.js"
+    ]
+  },
+  "src/routes/mygames.svelte": {
+    "file": "entries/pages/mygames.svelte.js",
+    "src": "src/routes/mygames.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-38cedc01.js",
+      "src/routes/fb.js"
+    ],
+    "css": [
+      "assets/entries/pages/mygames.svelte-2402b602.css",
+      "assets/StarRating.svelte_svelte_type_style_lang-e96290e3.css",
+      "assets/PopularGame.svelte_svelte_type_style_lang-d7c4bb42.css",
+      "assets/Game.svelte_svelte_type_style_lang-69c29c62.css"
+    ]
+  },
+  "src/routes/platforms/[id].svelte": {
+    "file": "entries/pages/platforms/_id_.svelte.js",
+    "src": "src/routes/platforms/[id].svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-38cedc01.js",
+      "_PopularGame-f786c5fc.js"
+    ],
+    "css": [
+      "assets/entries/pages/genres/_id_.svelte-41ad69c2.css",
+      "assets/Game.svelte_svelte_type_style_lang-69c29c62.css",
+      "assets/PopularGame.svelte_svelte_type_style_lang-d7c4bb42.css"
+    ]
+  },
+  "src/routes/profile.svelte": {
+    "file": "entries/pages/profile.svelte.js",
+    "src": "src/routes/profile.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-38cedc01.js",
+      "src/routes/fb.js"
+    ],
+    "css": [
+      "assets/entries/pages/profile.svelte-f03daf35.css",
+      "assets/PopularGame.svelte_svelte_type_style_lang-d7c4bb42.css"
+    ]
+  },
+  "src/routes/reviews.svelte": {
+    "file": "entries/pages/reviews.svelte.js",
+    "src": "src/routes/reviews.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-38cedc01.js",
+      "src/routes/fb.js"
+    ]
+  },
+  "src/routes/search/[id].svelte": {
+    "file": "entries/pages/search/_id_.svelte.js",
+    "src": "src/routes/search/[id].svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-38cedc01.js",
+      "_PopularGame-f786c5fc.js"
+    ],
+    "css": [
+      "assets/entries/pages/genres/_id_.svelte-41ad69c2.css",
+      "assets/Game.svelte_svelte_type_style_lang-69c29c62.css",
+      "assets/PopularGame.svelte_svelte_type_style_lang-d7c4bb42.css"
+    ]
+  },
+  "src/routes/signup.svelte": {
+    "file": "entries/pages/signup.svelte.js",
+    "src": "src/routes/signup.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-38cedc01.js",
+      "_LoginForm-6c849788.js",
+      "src/routes/fb.js"
+    ]
+  },
+  "src/routes/testing.svelte": {
+    "file": "entries/pages/testing.svelte.js",
+    "src": "src/routes/testing.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-38cedc01.js",
+      "src/routes/fb.js"
+    ],
+    "css": [
+      "assets/entries/pages/mygames.svelte-2402b602.css",
+      "assets/StarRating.svelte_svelte_type_style_lang-e96290e3.css",
+      "assets/PopularGame.svelte_svelte_type_style_lang-d7c4bb42.css",
+      "assets/Game.svelte_svelte_type_style_lang-69c29c62.css"
+    ]
+  },
+  "src/routes/testingclone.svelte": {
+    "file": "entries/pages/testingclone.svelte.js",
+    "src": "src/routes/testingclone.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-38cedc01.js",
+      "src/routes/fb.js",
+      "_StarRating-28dc5200.js"
+    ],
+    "css": [
+      "assets/entries/pages/testingclone.svelte-01cbb334.css",
+      "assets/ReviewTest.svelte_svelte_type_style_lang-2894b696.css",
+      "assets/StarRating.svelte_svelte_type_style_lang-e96290e3.css"
+    ]
+  },
+  "src/routes/upcoming.svelte": {
+    "file": "entries/pages/upcoming.svelte.js",
+    "src": "src/routes/upcoming.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-38cedc01.js",
+      "_PopularGame-f786c5fc.js"
+    ],
+    "css": [
+      "assets/entries/pages/index.svelte-43f9c302.css",
+      "assets/PopularGame.svelte_svelte_type_style_lang-d7c4bb42.css"
+    ]
+  },
+  "src/routes/user/backlog/[id].svelte": {
+    "file": "entries/pages/user/backlog/_id_.svelte.js",
+    "src": "src/routes/user/backlog/[id].svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-38cedc01.js",
+      "src/routes/fb.js"
+    ],
+    "css": [
+      "assets/entries/pages/user/backlog/_id_.svelte-3e5a4f43.css",
+      "assets/PopularGame.svelte_svelte_type_style_lang-d7c4bb42.css"
+    ]
+  },
+  "src/routes/user/games/[id].svelte": {
+    "file": "entries/pages/user/games/_id_.svelte.js",
+    "src": "src/routes/user/games/[id].svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-38cedc01.js",
+      "src/routes/fb.js"
+    ],
+    "css": [
+      "assets/entries/pages/user/backlog/_id_.svelte-3e5a4f43.css",
+      "assets/StarRating.svelte_svelte_type_style_lang-e96290e3.css",
+      "assets/PopularGame.svelte_svelte_type_style_lang-d7c4bb42.css"
+    ]
+  },
+  "src/routes/user/home/[id].svelte": {
+    "file": "entries/pages/user/home/_id_.svelte.js",
+    "src": "src/routes/user/home/[id].svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-38cedc01.js",
+      "src/routes/fb.js"
+    ],
+    "css": [
+      "assets/entries/pages/user/backlog/_id_.svelte-3e5a4f43.css",
+      "assets/PopularGame.svelte_svelte_type_style_lang-d7c4bb42.css"
+    ]
+  },
+  "src/routes/user/reviews/[id].svelte": {
+    "file": "entries/pages/user/reviews/_id_.svelte.js",
+    "src": "src/routes/user/reviews/[id].svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-38cedc01.js",
+      "src/routes/fb.js",
+      "_StarRating-28dc5200.js"
+    ],
+    "css": [
+      "assets/entries/pages/user/reviews/_id_.svelte-8cb70004.css",
+      "assets/StarRating.svelte_svelte_type_style_lang-e96290e3.css"
+    ]
+  },
+  "_index-38cedc01.js": {
+    "file": "chunks/index-38cedc01.js"
+  },
+  "_PopularGame-f786c5fc.js": {
+    "file": "chunks/PopularGame-f786c5fc.js",
+    "imports": [
+      "_index-38cedc01.js"
+    ],
+    "css": [
+      "assets/PopularGame.svelte_svelte_type_style_lang-d7c4bb42.css"
+    ]
+  },
+  "_LoginForm-6c849788.js": {
+    "file": "chunks/LoginForm-6c849788.js",
+    "imports": [
+      "_index-38cedc01.js",
+      "src/routes/fb.js"
+    ],
+    "css": [
+      "assets/LoginForm-c4be3697.css"
+    ]
+  },
+  "_StarRating-28dc5200.js": {
+    "file": "chunks/StarRating-28dc5200.js",
+    "imports": [
+      "_index-38cedc01.js"
+    ],
+    "css": [
+      "assets/StarRating.svelte_svelte_type_style_lang-e96290e3.css"
+    ]
+  },
+  ".svelte-kit/build/hooks.js": {
+    "file": "chunks/hooks-1c45ba0b.js",
+    "src": ".svelte-kit/build/hooks.js",
+    "isDynamicEntry": true
+  }
+}
