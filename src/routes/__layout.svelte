@@ -15,13 +15,16 @@
     import { page } from '$app/stores';
 import Navbar from '../components/Navbar.svelte';
 
-
-   
+  
 
 
 </script>
 
+  
+
+
 <Navbar></Navbar>
+
 
 
 <slot />

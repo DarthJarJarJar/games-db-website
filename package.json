@@ -20,6 +20,7 @@
 		"prettier-plugin-svelte": "^2.7.0",
 		"sass": "^1.53.0",
 		"svelte": "^3.48.0",
+		"svelte-dark-mode": "^2.1.0",
 		"svelte-preprocess": "^4.10.7"
 	},
 	"type": "module",
@@ -32,6 +33,7 @@
 		"firebase-admin": "^11.0.0",
 		"svelte-stars-hover-rating": "^1.0.7",
 		"svelte-stars-rating": "^1.0.3",
+		"svelte-theme-toggle": "^1.1.2",
 		"sveltestrap": "^5.9.0"
 	}
 }
