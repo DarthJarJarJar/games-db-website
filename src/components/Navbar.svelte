@@ -3,7 +3,6 @@
     import global from '../global.css';
     let searchKey = '';
     import {goto} from '$app/navigation';
-
     
    
     import { page } from '$app/stores';
@@ -23,39 +22,6 @@ function searchUser() {
   
   
 }
-
- /*   auth.onAuthStateChanged(function(user) {
-  if (user) {
-   signedIn = true;
-  } else {signedIn = false;
-  }}
-)
-
-
-
-const loginChecker = async () => {
-  if(auth.currentUser) {
-    return true
-  } else return false
-}
-
-loginChecker().then((flag)=>{
-  signedIn = flag
-})
-
-
-
-onMount(() => {
-  let auth = getAuth(App);
-  const functionUser = auth.onAuthStateChanged(async(user) => {
-    if(user) {
-      return true
-    } else return false
-  })
-})
-
-signedIn = true */
-
 </script>
 <nav class="navbar navbar-expand-lg ">
 
@@ -71,6 +37,7 @@ signedIn = true */
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/">Home</a>
           </li>
+          
           <li class="nav-item dropdown">
             <!-- svelte-ignore a11y-invalid-attribute -->
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

@@ -7,7 +7,7 @@
        'Authorization': "Bearer sd089a9azgftad7tbbaroxitu6x71k",
        "X-Requested-With": "XMLHttpRequest"
          },
-         body: `fields name, genres.name, platforms.name, release_dates.human, summary,screenshots.image_id, cover.image_id, artworks, involved_companies.company.name; where id = ${params.id};`
+         body: `fields name, genres.name, platforms.name, platforms.id, release_dates.human, summary,screenshots.image_id, cover.image_id, artworks, involved_companies.company.name; where id = ${params.id};`
          })
        
        const data = await res.json();
