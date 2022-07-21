@@ -44,19 +44,9 @@ function searchUser() {
               Browse
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/b/">All Games</a></li>
                 <li><a class="dropdown-item" href="/upcoming/">Upcoming Games</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><h6 class="dropdown-header">Genres</h6></li>
-              <li><a class="dropdown-item" href="/genres/31">Adventure</a></li>
-              <li><a class="dropdown-item" href="/genres/4">Fighting</a></li>
-              <li><a class="dropdown-item" href="/genres/12">RPGs</a></li>
-              <li><a class="dropdown-item" href="/genres/10">Racing</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><h6 class="dropdown-header">Platforms</h6></li>
-              <li><a class="dropdown-item" href="/platforms/6">PC</a></li>
-              <li><a class="dropdown-item" href="/platforms/167">Playstation 5</a></li>
-              <li><a class="dropdown-item" href="/platforms/49">Xbox One</a></li>
-              <li><a class="dropdown-item" href="/platforms/130">Nintendo Switch</a></li>
+
             </ul>
           </li>
     
