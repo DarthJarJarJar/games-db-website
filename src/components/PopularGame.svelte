@@ -1,6 +1,5 @@
 <script>
     export let game;
-    console.log(game)
 </script>
 
 {#if (game.id)}

@@ -1,13 +1,13 @@
 <script context="module">
     export async function load({fetch, params}) {
-       const res = await fetch(`https://powerful-fjord-21607.herokuapp.com/https://api.igdb.com/v4/games/`, {
+       const res = await fetch(`https://https://cors-dun.vercel.app/https://api.igdb.com/v4/games/`, {
          method: 'POST',
          headers: {
            'Client-ID': 'o5xvtlqq670n8hhzz05rvwpbr7hjt4',
        'Authorization': "Bearer sd089a9azgftad7tbbaroxitu6x71k",
        "X-Requested-With": "XMLHttpRequest"
          },
-         body: `fields name, genres.name, platforms.name, platforms.id, release_dates.human, summary,screenshots.image_id, cover.image_id, artworks, involved_companies.company.name; where id = ${params.id};`
+         body: `fields name, genres.name, aggregated_rating, platforms.name, platforms.id, release_dates.human, summary,screenshots.image_id, cover.image_id, artworks, involved_companies.company.name; where id = ${params.id};`
          })
        
        const data = await res.json();
@@ -24,6 +24,7 @@
    <script>
     import  { goto } from "$app/navigation";
     import Rating from "../../components/Rating.svelte"
+    import ProgressCircle from "svelte-progresscircle"
     import ReviewCard from "../../components/ReviewCard.svelte"
     import App from "../fb";
     import ReviewTest from "../../components/ReviewTest.svelte"
@@ -33,9 +34,13 @@
    import { getAuth, onAuthStateChanged, } from 'firebase/auth';
    import { updateDoc,doc, getFirestore,collection, addDoc, query, where, getDoc, getDocs } from "firebase/firestore"; 
    import dubey from "../../components/Rating.svelte"
+   import 'ui-progress-circle';
+
     const db = getFirestore()
+    let value = 10
 const auth = getAuth(App);
 let uid;
+
 let errorMessage = "";
    let isInBacklog;
    let isFav;
@@ -335,6 +340,7 @@ if(currentPlayed.indexOf(searchedGame.id)===-1){
        }} catch {
            genresString.push("No genres found.")
        }
+       console.log(searchedGame)
 
    </script>
 <div class="game-info" in:fly={{y: 50, duration: 400, delay:500}} out:fly={{duration: 500}}>
@@ -393,7 +399,9 @@ if(currentPlayed.indexOf(searchedGame.id)===-1){
          <span>Platform(s)</span> {platformsString}<br />
          <span>Genre(s):</span>
          {genresString} 
+         
      </p>
+     
      {#if (signedIn)}
      <div class="user-options">
          {#if (!isInBacklog)}
@@ -413,9 +421,10 @@ if(currentPlayed.indexOf(searchedGame.id)===-1){
 
  
          <p class="error">{errorMessage}</p>
+         
+        
      </div>
- 
- 
+
 
 
  {#if name}

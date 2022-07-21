@@ -1,4 +1,7 @@
 <script context="module">
+  import proxyURL from "../proxy"
+  const currentDate = new Date();
+    let recentTimeStamp = currentDate.getTime()-15778800000
     export async function load({fetch}) {
        const res = await fetch(`https://powerful-fjord-21607.herokuapp.com/https://api.igdb.com/v4/genres/`, {
          method: 'POST',
@@ -24,19 +27,79 @@
        
        const data2 = await res2.json();
    
+
+       const res3 = await fetch(`${proxyURL}https://api.igdb.com/v4/games/`, {
+          method: 'POST',
+          headers: {
+            'Client-ID': 'o5xvtlqq670n8hhzz05rvwpbr7hjt4',
+        'Authorization': "Bearer sd089a9azgftad7tbbaroxitu6x71k",
+        "X-Requested-With": "XMLHttpRequest"
+          },
+          body: `fields name, cover.image_id, follows; sort follows desc; where follows != null & first_release_date>${Math.floor(recentTimeStamp/1000)} & first_release_date<${Math.floor(currentDate.getTime()/1000)}; limit 50;`
+          })
+        
+        const data3 = await res3.json();
+
+        const res4 = await fetch(`https://powerful-fjord-21607.herokuapp.com/https://api.igdb.com/v4/game_modes/`, {
+         method: 'POST',
+         headers: {
+           'Client-ID': 'o5xvtlqq670n8hhzz05rvwpbr7hjt4',
+       'Authorization': "Bearer sd089a9azgftad7tbbaroxitu6x71k",
+       "X-Requested-With": "XMLHttpRequest"
+         },
+         body: `fields name ; limit 500;sort created_at desc;`
+         })
+       
+       const data4 = await res4.json();
+
+       const res5 = await fetch(`https://powerful-fjord-21607.herokuapp.com/https://api.igdb.com/v4/themes/`, {
+         method: 'POST',
+         headers: {
+           'Client-ID': 'o5xvtlqq670n8hhzz05rvwpbr7hjt4',
+       'Authorization': "Bearer sd089a9azgftad7tbbaroxitu6x71k",
+       "X-Requested-With": "XMLHttpRequest"
+         },
+         body: `fields name ; limit 500;`
+         })
+       
+       const data5 = await res5.json();
+
+       const res6 = await fetch(`https://powerful-fjord-21607.herokuapp.com/https://api.igdb.com/v4/player_perspectives/`, {
+         method: 'POST',
+         headers: {
+           'Client-ID': 'o5xvtlqq670n8hhzz05rvwpbr7hjt4',
+       'Authorization': "Bearer sd089a9azgftad7tbbaroxitu6x71k",
+       "X-Requested-With": "XMLHttpRequest"
+         },
+         body: `fields name ; limit 500;`
+         })
+       
+       const data6 = await res6.json();
+
+      
+
        return {
-           props : {g : data, p: data2}
+           props : {g : data, p: data2, popularGames: data3, modes: data4, themes: data5, perspectives: data6}
        }
    }
    
    </script>
 <script>
+  export let popularGames
+  export let modes;
     let searchGenre; 
+    let searchCategory;
+    let searchModes;
+    export let themes
+    let searchThemes
+    export let perspectives;
+    let searchPerspectives;
+    
     import { fly } from "svelte/transition"
     export let g;
    export let p;
-   console.log(p)
     import PopularGame from "../components/PopularGame.svelte"
+import Index from "./index.svelte";
     let query;
     
     for(let genre of g) {
@@ -44,10 +107,33 @@
     }
     const genres = g
 
+    for(let theme of themes) {
+      theme.active = false
+    }
 
     for(let plat of p) {
         plat.active = false
     }
+    for(let mode of modes) {
+      mode.active =  false
+      
+    }
+    for(let perspective of perspectives) {
+      perspective.active = false
+    }
+    
+
+
+    const categories = [
+      {name: "Main Game", id: 0, active: false},
+      {name: "DLC/Add-on", id: 1, active: false},
+      {name: "Expansion", id: 2, active: false},
+      {name: "Bundle", id: 3, active: false},
+      {name: "Remake", id: 8, active: false},
+      {name: "Remaster", id: 9, active: false},
+      {name: "Expanded Game", id: 10, active: false},
+      
+    ]
 
 
     const platforms = p
@@ -60,6 +146,42 @@
         {id: 10, active:false},
 
     ]
+
+   function getIndexOfPlatform(plat) {
+    let index = 0
+   let result;
+   for(let platform of platforms) {
+     if(platform.name.toLowerCase() === plat) {
+      result = index
+     }
+     index += 1
+   }
+   return result
+   }
+   
+   console.log(getIndexOfPlatform("playstation 5"))
+   function array_move(arr, old_index, new_index) {
+    if (new_index >= arr.length) {
+        var k = new_index - arr.length + 1;
+        while (k--) {
+            arr.push(undefined);
+        }
+    }
+    arr.splice(new_index, 0, arr.splice(old_index, 1)[0]);
+    return arr; // for testing
+  };
+  array_move(platforms, getIndexOfPlatform("playstation 5"), 0)
+  array_move(platforms, getIndexOfPlatform("xbox series x|s"), 1)
+  array_move(platforms, getIndexOfPlatform("pc (microsoft windows)"), 2)
+  array_move(platforms, getIndexOfPlatform("nintendo switch"), 3)
+  array_move(platforms, getIndexOfPlatform("playstation 4"), 4)
+  array_move(platforms, getIndexOfPlatform("xbox one"), 5)
+  array_move(platforms, getIndexOfPlatform("playstation 3"), 6)
+  array_move(platforms, getIndexOfPlatform("xbox 360"), 7)
+  array_move(platforms, getIndexOfPlatform("playstation 2"), 8)
+  array_move(platforms, getIndexOfPlatform("xbox"), 9)
+  array_move(platforms, getIndexOfPlatform("wii u"), 10)
+  array_move(platforms, getIndexOfPlatform("playstation"), 11)
 
     let continents;
 
@@ -78,7 +200,6 @@
       .then(data => {
         continents = data;
         for(let c of data) {
-            console.log(c)
         }  
       });
     }
@@ -95,34 +216,104 @@
     function s() {
         let genresFlag;
         let platformsFlag;
+        let categoriesFlag;
         let genreAray = []
+        let platformArray = []
+        let categoryArray = []
+        let modeArray = []
+        let themeArray = []
+        let perspectiveArray = []
+      
+        let gFlag = {flag: false, array: genreAray, qField: "genres" }
+        let pFlag = {flag: false, array: platformArray, qField: "platforms"}
+        let cFlag = {flag: false, array: categoryArray, qField: "category" }
+        let mFlag = {flag: false, array: modeArray, qField: "game_modes" }
+        let tFlag = {flag: false, array: themeArray, qField: "themes" }
+        let perFlag = {flag: false, array: perspectiveArray, qField: "player_perspectives" }
+
+
+
+        
         for(let genre of genres) {
             if(genre.active){
                 genresFlag = true
+                gFlag.flag = true
                 genreAray.push(genre.id)
             }
         }
-        let platformArray = []
+        
         for(let platform of platforms) {
             if(platform.active) {
                 platformsFlag = true
+                pFlag.flag = true
                 console.log(platform)
                 platformArray.push(platform.id)
             }
         }
-        console.log(genreAray)
-        console.log(platformArray)
-        if(platformsFlag && genresFlag) {
-            console.log('print')
-            query = `where genres=(${genreAray}) & follows != null & platforms=(${platformArray}); limit 50;`
-        } else if(genresFlag && !platformsFlag) {
-            query = `where genres=(${genreAray}) & follows != null; limit 50;`
+        
+        for(let category of categories) {
+            if(category.active) {
+                categoriesFlag = true
+                cFlag.flag = true
+                console.log(category)
+                categoryArray.push(category.id)
+            }
         }
-        else if(!genresFlag && platformsFlag) {
-            query = `where follows != null & platforms=(${platformArray}); limit 50;`
+        for(let mode of modes) {
+            if(mode.active) {
+                mFlag.flag = true
+                modeArray.push(mode.id)
+            }
         }
-        console.log(query)
-        search(query)
+        for(let theme of themes) {
+            if(theme.active) {
+                tFlag.flag = true
+                themeArray.push(theme.id)
+            }
+        }
+        for(let perspective of perspectives) {
+            if(perspective.active) {
+                perFlag.flag = true
+                perspectiveArray.push(perspective.id)
+            }
+        }
+        
+    
+        let q = "limit 50; where cover.image_id != null & follows != null"
+        const flagsArray = [gFlag, pFlag, cFlag, mFlag, tFlag, perFlag]
+        for(let flag of flagsArray) {
+          if(flag.flag){
+            q = q + ` & ${flag.qField}=(${flag.array}) `
+          }
+        }
+        q = q + ";"
+        console.log(q)
+
+        search(q)
+    }
+
+    function reset() {
+
+    for(let genre of g) {
+        genre.active = false
+    }
+
+    for(let theme of themes) {
+      theme.active = false
+    }
+
+    for(let plat of p) {
+        plat.active = false
+    }
+    for(let mode of modes) {
+      mode.active =  false
+      
+    }
+    for(let perspective of perspectives) {
+      perspective.active = false
+    }
+    
+    console.log(themes)
     }
 
  
@@ -153,16 +344,16 @@
           </div>
           <div class="offcanvas-body">
             <div class="accordion" id="accordionExample">
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                      Genres
-                    </button>
-                  </h2>
-                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    Genres
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <input type="text" bind:value={searchGenre} placeholder="Search genres" class="form-control" style="margin-bottom: 0.4rem;">
-                        {#each genres as genre}
+                        {#each genres as genre, index}
                         {#if searchGenre}
                             {#if (genre.name.toLowerCase().includes(searchGenre.toLowerCase()) )}
                             <div class="form-check">
@@ -172,15 +363,35 @@
                                 </label>
                               </div>
                             {/if}
-                            {:else} <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" bind:checked={genre.active}>
-                                <label class="form-check-label" for="flexCheckDefault">
-                                  {genre.name}
-                                </label>
-                              </div>
+                            {:else} 
+                            {#if (index<11)}
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" bind:checked={genre.active}>
+                              <label class="form-check-label" for="flexCheckDefault">
+                                {genre.name}
+                              </label>
+                            </div>
+                            {/if}
+                            
+                            
+                           
                         {/if}
                         
-                        {/each}    
+                        {/each}   
+                        <details>
+                          <summary>Show more</summary>
+                          {#each genres as genre, index}
+                          {#if (index>11)}
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" bind:checked={genre.active}>
+                            <label class="form-check-label" for="flexCheckDefault">
+                              {genre.name}
+                            </label>
+                          </div>
+                          {/if}
+                            
+                          {/each}
+                        </details> 
                             </div>
                   </div>
                 </div>
@@ -192,8 +403,11 @@
                   </h2>
                   <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <input type="text" bind:value={searchPlat} placeholder="Search platforms" class="form-control" style="margin-bottom: 0.4rem;">
-                        {#each platforms as platform}
+                        
+                      <input type="text" bind:value={searchPlat} placeholder="Search platforms" class="form-control" style="margin-bottom: 0.4rem;">
+                       
+                      {#each platforms as platform, index}
+
                         {#if searchPlat}
                             {#if (platform.name.toLowerCase().includes(searchPlat.toLowerCase()) || (platform.abbreviation && platform.abbreviation.toLowerCase().includes(searchPlat.toLowerCase())) )}
                             <div class="form-check">
@@ -203,34 +417,230 @@
                                 </label>
                               </div>
                             {/if}
-                            {:else} <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" bind:checked={platform.active}>
-                                <label class="form-check-label" for="flexCheckDefault">
-                                  {platform.name}
-                                </label>
-                              </div>
+                            {:else} 
+                            {#if (index<11)}
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" bind:checked={platform.active}>
+                                  <label class="form-check-label" for="flexCheckDefault">
+                                    {platform.name}
+                                  </label>
+                                </div>
+                        
+                            {/if}
+                      
                         {/if}
                         
                         {/each}
+                        <details>
+                          <summary>Show more</summary>
+                          {#each platforms as platform, index}
+                          {#if (index>11)}
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" bind:checked={platform.active}>
+                            <label class="form-check-label" for="flexCheckDefault">
+                              {platform.name}
+                            </label>
+                          </div>
+                          {/if}
+                        {/each}
     
+                        </details>
+                       
                     </div>
                   </div>
                 </div>
-                
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Categories
+                    </button>
+                  </h2>
+                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                          <input type="text" bind:value={searchCategory} placeholder="Search categories" class="form-control" style="margin-bottom: 0.4rem;">
+                          {#each categories as category, index}
+                          {#if searchCategory}
+                              {#if (category.name.toLowerCase().includes(searchCategory.toLowerCase()) )}
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" bind:checked={category.active}>
+                                  <label class="form-check-label" for="flexCheckDefault">
+                                    {category.name}
+                                  </label>
+                                </div>
+                              {/if}
+                              {:else} 
+                              {#if (index<11)}
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" bind:checked={category.active}>
+                                <label class="form-check-label" for="flexCheckDefault">
+                                  {category.name}
+                                </label>
+                              </div>
+                              {/if}
+                              
+                              
+                             
+                          {/if}
+                          
+                          {/each}   
+                         
+                              </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Game Modes
+                      </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <input type="text" bind:value={searchModes} placeholder="Search categories" class="form-control" style="margin-bottom: 0.4rem;">
+                            {#each modes as mode, index}
+                            {#if searchModes}
+                                {#if (mode.name.toLowerCase().includes(searchModes.toLowerCase()) )}
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" bind:checked={mode.active}>
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                      {mode.name}
+                                    </label>
+                                  </div>
+                                {/if}
+                                {:else} 
+                                {#if (index<22)}
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" bind:checked={mode.active}>
+                                  <label class="form-check-label" for="flexCheckDefault">
+                                    {mode.name}
+                                  </label>
+                                </div>
+                                {/if}
+                                
+                                
+                               
+                            {/if}
+                            
+                            {/each}
+                           
+                           
+                                </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                          Themes
+                        </button>
+                      </h2>
+                      <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                              <input type="text" bind:value={searchModes} placeholder="Search categories" class="form-control" style="margin-bottom: 0.4rem;">
+                              {#each themes as theme, index}
+                              {#if searchThemes}
+                                  {#if (theme.name.toLowerCase().includes(searchThemes.toLowerCase()) )}
+                                  <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" bind:checked={theme.active}>
+                                      <label class="form-check-label" for="flexCheckDefault">
+                                        {theme.name}
+                                      </label>
+                                    </div>
+                                  {/if}
+                                  {:else} 
+                                  {#if (index<11)}
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" bind:checked={theme.active}>
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                      {theme.name}
+                                    </label>
+                                  </div>
+                                  {/if}
+                                  
+                                  
+                                 
+                              {/if}
+                              
+                              {/each} 
+                              <details>
+                                <summary>Show more</summary>
+                                {#each themes as theme, index}
+                                {#if (index>11)}
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" bind:checked={theme.active}>
+                                  <label class="form-check-label" for="flexCheckDefault">
+                                    {theme.name}
+                                  </label>
+                                </div>
+                                {/if}
+                              {/each}
+          
+                              </details>    
+                             
+                                  </div>
+                        </div>
+                      </div>
+
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            Player Perspective
+                          </button>
+                        </h2>
+                        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <input type="text" bind:value={searchPerspectives} placeholder="Search categories" class="form-control" style="margin-bottom: 0.4rem;">
+                                {#each perspectives as perspective, index}
+                                {#if searchPerspectives}
+                                    {#if (perspective.name.toLowerCase().includes(searchPerspectives.toLowerCase()) )}
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" bind:checked={perspective.active}>
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                          {perspective.name}
+                                        </label>
+                                      </div>
+                                    {/if}
+                                    {:else} 
+                                    {#if (index<22)}
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" bind:checked={perspective.active}>
+                                      <label class="form-check-label" for="flexCheckDefault">
+                                        {perspective.name}
+                                      </label>
+                                    </div>
+                                    {/if}
+                                    
+                                    
+                                   
+                                {/if}
+                                
+                                {/each}
+                               
+                               
+                                    </div>
+                          </div>
+                        </div>
               </div>
              
         
-            <button on:click={s} type="button" class="btn btn-primary searchbutton" data-bs-dismiss="offcanvas" aria-label="Close">Search</button>
+            
+               <button on:click={s} type="button" class="btn btn-primary searchbutton" data-bs-dismiss="offcanvas" aria-label="Close">Search</button> <br>
+
           </div>
         </div>
-    
+        {#if continents}
+          <h2>Results</h2>
+          {:else}         <h2>Popular Games</h2> <p>Add filters to refine your search</p>
+
+        {/if}
+
         <div class="games" in:fly={{y: 50, duration: 400, delay:500}} out:fly={{duration: 500}}>
-           
             {#if continents}
             {#each continents as game}
                 <PopularGame {game}></PopularGame>
             {/each}
-            {:else} <h2>Add filters to start browsing</h2>
+           {:else}
+           {#each popularGames as game}
+                <PopularGame {game}></PopularGame>
+            {/each}
         {/if} 
         
         </div>
@@ -242,9 +652,7 @@
 
 
 <style>
-    .dubey {
-        float:right;
-    }
+   
     .games{
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
