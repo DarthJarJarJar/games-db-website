@@ -1,1 +1,0 @@
-import{S as e,i as o,s as r}from"../chunks/index-12679752.js";import{B as n,g as l,a as s}from"../chunks/fb-07f3109e.js";n(s);const u=l(s);async function c({params:a}){return console.log(u.currentUser),{props:{reviewData:1}}}class m extends e{constructor(t){super(),o(this,t,null,null,r,{})}}export{m as default,c as load};

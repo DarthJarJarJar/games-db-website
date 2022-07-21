@@ -1,6 +1,6 @@
 <script context="module">
     export async function load({fetch, params}) {
-       const res = await fetch(`https://https://cors-dun.vercel.app/https://api.igdb.com/v4/games/`, {
+       const res = await fetch(`https://powerful-fjord-21607.herokuapp.com/https://api.igdb.com/v4/games/`, {
          method: 'POST',
          headers: {
            'Client-ID': 'o5xvtlqq670n8hhzz05rvwpbr7hjt4',
