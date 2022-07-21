@@ -10,9 +10,9 @@ var Star_svelte_svelte_type_style_lang = /* @__PURE__ */ (() => ".star.svelte-1r
 var Rating_svelte_svelte_type_style_lang = /* @__PURE__ */ (() => ".feedback.svelte-dffvs7{position:relative}.starContainer.svelte-dffvs7{display:inline-block;border-radius:8px;padding:4px 6px 0}button{cursor:pointer}")();
 var ReviewCard_svelte_svelte_type_style_lang = /* @__PURE__ */ (() => ".buttons.svelte-cait7m.svelte-cait7m.svelte-cait7m{display:inline-flex;flex-wrap:wrap}details.svelte-cait7m.svelte-cait7m.svelte-cait7m{border:1px solid #aaa;border-radius:4px;padding:.5em .5em 0}summary.svelte-cait7m.svelte-cait7m.svelte-cait7m{font-weight:bold;margin:-.5em -.5em 0;padding:.5em}details[open].svelte-cait7m.svelte-cait7m.svelte-cait7m{padding:.5em}details[open].svelte-cait7m summary.svelte-cait7m.svelte-cait7m{border-bottom:1px solid #aaa;margin-bottom:.5em}.spoilers.svelte-cait7m.svelte-cait7m.svelte-cait7m{margin-bottom:1rem}.check.svelte-cait7m.svelte-cait7m.svelte-cait7m{display:block;width:fit-content}p.svelte-cait7m.svelte-cait7m.svelte-cait7m{white-space:pre-wrap}.form-floating.svelte-cait7m>.form-control.svelte-cait7m:not(:-moz-placeholder-shown)~label.svelte-cait7m{opacity:1;color:rgba(0, 0, 0, 0.5);background-color:#fff;height:auto;padding:0px;padding:0px 0px 0px 10px;width:100%;transform:scale(0.982) translateY(0.045rem) translateX(0.1rem);border-radius:5px 0 0 0}.form-floating.svelte-cait7m>.form-control.svelte-cait7m:focus~label.svelte-cait7m,.form-floating.svelte-cait7m>.form-control.svelte-cait7m:not(:placeholder-shown)~label.svelte-cait7m,.form-floating.svelte-cait7m>.form-control.svelte-cait7m:-webkit-autofill~label.svelte-cait7m{opacity:1;color:rgba(0, 0, 0, 0.5);height:auto;padding:0px;padding:0px 0px 0px 10px;width:100%;transform:scale(0.982) translateY(0.045rem) translateX(0.1rem);border-radius:5px 0 0 0}")();
 var ReviewTest_svelte_svelte_type_style_lang = /* @__PURE__ */ (() => ".buttons.svelte-18qqude.svelte-18qqude{display:inline-flex;flex-wrap:wrap}details.svelte-18qqude.svelte-18qqude{border:1px solid #aaa;border-radius:4px;padding:.5em .5em 0}summary.svelte-18qqude.svelte-18qqude{font-weight:bold;margin:-.5em -.5em 0;padding:.5em}details[open].svelte-18qqude.svelte-18qqude{padding:.5em}details[open].svelte-18qqude summary.svelte-18qqude{border-bottom:1px solid #aaa;margin-bottom:.5em}.spoilers.svelte-18qqude.svelte-18qqude{margin-bottom:1rem}.check.svelte-18qqude.svelte-18qqude{display:block;width:fit-content}p.svelte-18qqude.svelte-18qqude{white-space:pre-wrap}a.svelte-18qqude.svelte-18qqude{text-decoration:none}")();
-var _id__svelte_svelte_type_style_lang = /* @__PURE__ */ (() => ".error.svelte-kssepx.svelte-kssepx{color:red;font-size:medium}.user-options.svelte-kssepx.svelte-kssepx{display:block;margin:auto}.user-options.svelte-kssepx>button.svelte-kssepx{margin-right:0.5rem;margin-top:0.5rem;margin-bottom:0.5rem}h1.svelte-kssepx.svelte-kssepx{padding:1rem 0rem 2rem}p.svelte-kssepx.svelte-kssepx{padding:1rem 0rem}img.svelte-kssepx.svelte-kssepx{width:100%;border-radius:1rem}.game-info.svelte-kssepx.svelte-kssepx{margin:2rem 20%}span.svelte-kssepx.svelte-kssepx{font-weight:bold}")();
+var _id__svelte_svelte_type_style_lang = /* @__PURE__ */ (() => ".error.svelte-1s9vexd.svelte-1s9vexd{color:red;font-size:medium}.user-options.svelte-1s9vexd.svelte-1s9vexd{display:block;margin:auto}.user-options.svelte-1s9vexd>button.svelte-1s9vexd{margin-right:0.5rem;margin-top:0.5rem;margin-bottom:0.5rem}h1.svelte-1s9vexd.svelte-1s9vexd{padding:1rem 0rem 2rem}p.svelte-1s9vexd.svelte-1s9vexd{padding:1rem 0rem}img.svelte-1s9vexd.svelte-1s9vexd{width:100%;border-radius:1rem}.game-info.svelte-1s9vexd.svelte-1s9vexd{margin:2rem 20%}span.svelte-1s9vexd.svelte-1s9vexd{font-weight:bold}a.svelte-1s9vexd.svelte-1s9vexd{text-decoration:none}")();
 const css = {
-  code: ".error.svelte-kssepx.svelte-kssepx{color:red;font-size:medium}.user-options.svelte-kssepx.svelte-kssepx{display:block;margin:auto}.user-options.svelte-kssepx>button.svelte-kssepx{margin-right:0.5rem;margin-top:0.5rem;margin-bottom:0.5rem}h1.svelte-kssepx.svelte-kssepx{padding:1rem 0rem 2rem}p.svelte-kssepx.svelte-kssepx{padding:1rem 0rem}img.svelte-kssepx.svelte-kssepx{width:100%;border-radius:1rem}.game-info.svelte-kssepx.svelte-kssepx{margin:2rem 20%}span.svelte-kssepx.svelte-kssepx{font-weight:bold}",
+  code: ".error.svelte-1s9vexd.svelte-1s9vexd{color:red;font-size:medium}.user-options.svelte-1s9vexd.svelte-1s9vexd{display:block;margin:auto}.user-options.svelte-1s9vexd>button.svelte-1s9vexd{margin-right:0.5rem;margin-top:0.5rem;margin-bottom:0.5rem}h1.svelte-1s9vexd.svelte-1s9vexd{padding:1rem 0rem 2rem}p.svelte-1s9vexd.svelte-1s9vexd{padding:1rem 0rem}img.svelte-1s9vexd.svelte-1s9vexd{width:100%;border-radius:1rem}.game-info.svelte-1s9vexd.svelte-1s9vexd{margin:2rem 20%}span.svelte-1s9vexd.svelte-1s9vexd{font-weight:bold}a.svelte-1s9vexd.svelte-1s9vexd{text-decoration:none}",
   map: null
 };
 async function load({ fetch, params }) {
@@ -75,40 +75,40 @@ const U5Bidu5D = create_ssr_component(($$result, $$props, $$bindings, slots) => 
   if ($$props.searchedGame === void 0 && $$bindings.searchedGame && searchedGame !== void 0)
     $$bindings.searchedGame(searchedGame);
   $$result.css.add(css);
-  return `<div class="${"game-info svelte-kssepx"}"><div id="${"carouselExampleControls"}" class="${"carousel slide"}" data-bs-ride="${"carousel"}" style="${"border-radius: 0.5rem;"}"><div class="${"carousel-indicators"}">${each(hashArray, (hashthing, index) => {
+  return `<div class="${"game-info svelte-1s9vexd"}"><div id="${"carouselExampleControls"}" class="${"carousel slide"}" data-bs-ride="${"carousel"}" style="${"border-radius: 0.5rem;"}"><div class="${"carousel-indicators"}">${each(hashArray, (hashthing, index) => {
     return `${index === 0 ? `<button type="${"button"}" data-bs-target="${"#carouselExampleIndicators"}"${add_attribute("data-bs-slide-to", index, 0)} class="${"active"}" aria-current="${"true"}"${add_attribute("aria-label", `Screenshot ${index + 1}`, 0)}></button>` : `<button type="${"button"}" data-bs-target="${"#carouselExampleIndicators"}"${add_attribute("data-bs-slide-to", index, 0)}${add_attribute("aria-label", `Screenshot ${index + 1}`, 0)}></button>`}`;
   })}</div>
  
      <div class="${"carousel-inner"}">${each(hashArray, (hashitem, index) => {
-    return `${index === 0 ? `<div class="${"carousel-item active"}"><img style="${"border-radius: 0.5rem;"}"${add_attribute("src", `https://images.igdb.com/igdb/image/upload/t_screenshot_big/${hashitem}.jpg`, 0)}${add_attribute("alt", searchedGame.name, 0)} class="${"d-block w-100 svelte-kssepx"}">
-     </div>` : `<div class="${"carousel-item"}"><img style="${"border-radius: 0.5rem;"}"${add_attribute("src", `https://images.igdb.com/igdb/image/upload/t_screenshot_big/${hashitem}.jpg`, 0)}${add_attribute("alt", searchedGame.name, 0)} class="${"d-block w-100 svelte-kssepx"}">
+    return `${index === 0 ? `<div class="${"carousel-item active"}"><img style="${"border-radius: 0.5rem;"}"${add_attribute("src", `https://images.igdb.com/igdb/image/upload/t_screenshot_big/${hashitem}.jpg`, 0)}${add_attribute("alt", searchedGame.name, 0)} class="${"d-block w-100 svelte-1s9vexd"}">
+     </div>` : `<div class="${"carousel-item"}"><img style="${"border-radius: 0.5rem;"}"${add_attribute("src", `https://images.igdb.com/igdb/image/upload/t_screenshot_big/${hashitem}.jpg`, 0)}${add_attribute("alt", searchedGame.name, 0)} class="${"d-block w-100 svelte-1s9vexd"}">
  
          </div>`}`;
   })}</div>
-     <button class="${"carousel-control-prev"}" type="${"button"}" data-bs-target="${"#carouselExampleControls"}" data-bs-slide="${"prev"}"><span class="${"carousel-control-prev-icon svelte-kssepx"}" aria-hidden="${"true"}"></span>
-       <span class="${"visually-hidden svelte-kssepx"}">Previous</span></button>
-     <button class="${"carousel-control-next"}" type="${"button"}" data-bs-target="${"#carouselExampleControls"}" data-bs-slide="${"next"}"><span class="${"carousel-control-next-icon svelte-kssepx"}" aria-hidden="${"true"}"></span>
-       <span class="${"visually-hidden svelte-kssepx"}">Next</span></button></div>
+     <button class="${"carousel-control-prev"}" type="${"button"}" data-bs-target="${"#carouselExampleControls"}" data-bs-slide="${"prev"}"><span class="${"carousel-control-prev-icon svelte-1s9vexd"}" aria-hidden="${"true"}"></span>
+       <span class="${"visually-hidden svelte-1s9vexd"}">Previous</span></button>
+     <button class="${"carousel-control-next"}" type="${"button"}" data-bs-target="${"#carouselExampleControls"}" data-bs-slide="${"next"}"><span class="${"carousel-control-next-icon svelte-1s9vexd"}" aria-hidden="${"true"}"></span>
+       <span class="${"visually-hidden svelte-1s9vexd"}">Next</span></button></div>
  
-    <div class="${"text-container"}"><h1 class="${"svelte-kssepx"}">${escape(searchedGame.name)}</h1>
-     <p class="${"overview svelte-kssepx"}">${escape(searchedGame.summary)}</p>
-     <p class="${"svelte-kssepx"}"><span class="${"svelte-kssepx"}">Developers/Publishers</span>
+    <div class="${"text-container"}"><h1 class="${"svelte-1s9vexd"}">${escape(searchedGame.name)}</h1>
+     <p class="${"overview svelte-1s9vexd"}">${escape(searchedGame.summary)}</p>
+     <p class="${"svelte-1s9vexd"}"><span class="${"svelte-1s9vexd"}">Developers/Publishers</span>
          ${escape(comapanies)} <br>
-         <span class="${"svelte-kssepx"}">Platform(s)</span> ${escape(platformsString)}<br>
-         <span class="${"svelte-kssepx"}">Genre(s):</span>
+         <span class="${"svelte-1s9vexd"}">Platform(s)</span> ${escape(platformsString)}<br>
+         <span class="${"svelte-1s9vexd"}">Genre(s):</span>
          ${escape(genresString)}</p>
      
-     ${signedIn ? `<div class="${"user-options svelte-kssepx"}">${`<button type="${"button"}" class="${"btn btn-primary svelte-kssepx"}">Add to backlog</button>`} 
+     ${signedIn ? `<div class="${"user-options svelte-1s9vexd"}">${`<button type="${"button"}" class="${"btn btn-primary svelte-1s9vexd"}">Add to backlog</button>`} 
      
- ${`<button type="${"button"}" class="${"btn btn-primary svelte-kssepx"}">Add to favourites</button>`} 
+ ${`<button type="${"button"}" class="${"btn btn-primary svelte-1s9vexd"}">Add to favourites</button>`} 
  
 
  
-         <p class="${"error svelte-kssepx"}">${escape(errorMessage)}</p></div>
+         <p class="${"error svelte-1s9vexd"}">${escape(errorMessage)}</p></div>
 
 
 
- ${name ? `${``}` : ``}` : ``}</div>
+ ${name ? `${``}` : ``}` : `<strong><a href="${"/profile"}" class="${"svelte-1s9vexd"}">Sign In</a> to log, rate, review and more.</strong>`}</div>
  </div>`;
 });
 export { U5Bidu5D as default, load };

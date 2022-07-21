@@ -432,6 +432,7 @@ if(currentPlayed.indexOf(searchedGame.id)===-1){
  <ReviewTest game={searchedGame.id} uid={name} name={uniqueName} gamename={searchedGame.name}></ReviewTest> 
 {/if}
  {/if}
+ {:else} <strong><a href="/profile">Sign In</a> to log, rate, review and more.</strong>
      {/if}
  
      
@@ -482,6 +483,9 @@ if(currentPlayed.indexOf(searchedGame.id)===-1){
     }
     span {
         font-weight: bold;
+    }
+    a {
+        text-decoration: none;
     }
 </style>
    

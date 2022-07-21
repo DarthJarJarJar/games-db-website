@@ -35,7 +35,7 @@
         'Authorization': "Bearer sd089a9azgftad7tbbaroxitu6x71k",
         "X-Requested-With": "XMLHttpRequest"
           },
-          body: `fields name, cover.image_id, follows; sort follows desc; where follows != null & first_release_date>${Math.floor(recentTimeStamp/1000)} & first_release_date<${Math.floor(currentDate.getTime()/1000)}; limit 50;`
+          body: `fields name, cover.image_id, follows; sort follows desc; where follows != null & first_release_date>${Math.floor(recentTimeStamp/1000)} & first_release_date<${Math.floor(currentDate.getTime()/1000)}; limit 5;`
           })
         
         const data3 = await res3.json();

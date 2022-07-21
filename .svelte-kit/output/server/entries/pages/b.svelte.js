@@ -36,7 +36,7 @@ async function load({ fetch }) {
       "Authorization": "Bearer sd089a9azgftad7tbbaroxitu6x71k",
       "X-Requested-With": "XMLHttpRequest"
     },
-    body: `fields name, cover.image_id, follows; sort follows desc; where follows != null & first_release_date>${Math.floor(recentTimeStamp / 1e3)} & first_release_date<${Math.floor(currentDate.getTime() / 1e3)}; limit 50;`
+    body: `fields name, cover.image_id, follows; sort follows desc; where follows != null & first_release_date>${Math.floor(recentTimeStamp / 1e3)} & first_release_date<${Math.floor(currentDate.getTime() / 1e3)}; limit 5;`
   });
   const data3 = await res3.json();
   const res4 = await fetch(`https://powerful-fjord-21607.herokuapp.com/https://api.igdb.com/v4/game_modes/`, {
