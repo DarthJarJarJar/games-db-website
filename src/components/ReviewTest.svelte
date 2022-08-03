@@ -284,7 +284,6 @@
          
           </div>
     </div>
- 
    
      <style>
       .buttons {

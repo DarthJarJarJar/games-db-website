@@ -98,7 +98,6 @@ function searchUser() {
 
   <style>
 
-
 .form-stuff {
   margin: 16px;
 }
