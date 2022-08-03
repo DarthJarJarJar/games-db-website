@@ -7,7 +7,7 @@ const config = {
 		adapter: adapter()
 	},
 	preprocess: sveltePreprocess(),
-	"svelte.language-server.runtime": "/usr/local/bin/node"
+	'svelte.language-server.runtime': '/usr/local/bin/node'
 };
 
 export default config;

@@ -1,7 +1,5 @@
 <script>
-        import 'ui-progress-circle';
-
+	import 'ui-progress-circle';
 </script>
 
-
-<ui-progress-circle value="100" color="success"></ui-progress-circle>
+<ui-progress-circle value="100" color="success" />

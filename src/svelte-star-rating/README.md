@@ -60,7 +60,7 @@ Use it as follows:
 
 ```svelte
 <script>
-  import StarRating from 'svelte-star-rating';
+	import StarRating from 'svelte-star-rating';
 </script>
 
 <StarRating rating={3.35} />
@@ -74,15 +74,15 @@ Output:
 
 ```svelte
 <script>
-  import StarRating from 'svelte-star-rating';
-  const rating = 3.35;
-  const config = {
-    fullColor: '#f05',
-    emptyColor: 'hsl(240, 80%, 85%)',
-    size: 42,
-    showText: true,
-  };
-  const style = 'border: 1px solid firebrick;padding: 12px;';
+	import StarRating from 'svelte-star-rating';
+	const rating = 3.35;
+	const config = {
+		fullColor: '#f05',
+		emptyColor: 'hsl(240, 80%, 85%)',
+		size: 42,
+		showText: true
+	};
+	const style = 'border: 1px solid firebrick;padding: 12px;';
 </script>
 
 <StarRating {rating} {config} {style} />
