@@ -1,27 +1,13 @@
 <script context="module">
-    import proxyURL from "../proxy"
-    const currentDate = new Date();
-    let recentTimeStamp = currentDate.getTime()-15778800000
-    console.log(recentTimeStamp);
-    export async function load({fetch, params}) {
-        const res = await fetch(`${proxyURL}https://api.igdb.com/v4/games/`, {
-          method: 'POST',
-          headers: {
-            'Client-ID': 'o5xvtlqq670n8hhzz05rvwpbr7hjt4',
-        'Authorization': "Bearer sd089a9azgftad7tbbaroxitu6x71k",
-        "X-Requested-With": "XMLHttpRequest"
-          },
-          body: `fields name, cover.image_id, follows; sort follows desc; where rating != null & follows != null & first_release_date>${Math.floor(recentTimeStamp/1000)} & first_release_date<${Math.floor(currentDate.getTime()/1000)}; limit 200;`
-          })
-        
-        const data = await res.json();
+    export async function load({ fetch }) {
+    const res = await fetch('/popularGames');
 
-        
-
-        return {
-            props : {searchResults : data}
-        }
-    }
+  if (res.ok) return { props: { searchResults: await res.json() } };
+  return {
+    status: res.status,
+    error: new Error()
+   };
+  }
  </script>
 
 
@@ -29,18 +15,18 @@
   
   import { fly } from 'svelte/transition';
     export let searchResults;
+    import {popgames} from './store'
     import Browse from '../components/Browse.svelte';
     let searchKey = '';
     import {goto} from '$app/navigation';
 import PopularGame from '../components/PopularGame.svelte';
+import { onMount } from "svelte";
 
-    
+  
     function onSubmit() {
         goto('/search/'+searchKey);
     }
-    for(let game of searchResults) {
-      console.log(game);
-    }
+    
   </script>
   
 
@@ -55,6 +41,8 @@ import PopularGame from '../components/PopularGame.svelte';
       <PopularGame {game} />
     {/each}
     </div>
+
+    
 </section>
 
 

@@ -44,7 +44,7 @@ function searchUser() {
               Browse
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="/b/">All Games</a></li>
+                <li><a class="dropdown-item" sveltekit:prefetch href="/browse/">All Games</a></li>
                 <li><a class="dropdown-item" href="/upcoming/">Upcoming Games</a></li>
 
             </ul>
