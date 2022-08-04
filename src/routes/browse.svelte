@@ -453,7 +453,6 @@
 		}
 		q = q + ';';
 		console.log(q);
-		$querystring = q;
 		search(q);
 	}
 

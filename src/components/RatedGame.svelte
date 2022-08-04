@@ -33,10 +33,7 @@
 		border-radius: 0.4rem;
 		margin-bottom: 0.3rem;
 	}
-	h2 {
-		font-size: 0.9rem;
-		font-weight: bolder;
-	}
+	
 	.description {
 		height: 5vh;
 		font-weight: bolder;

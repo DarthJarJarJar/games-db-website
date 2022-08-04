@@ -110,6 +110,5 @@
 	#usernamesearch {
 		width: 10rem;
 	}
-	nav {
-	}
+	
 </style>

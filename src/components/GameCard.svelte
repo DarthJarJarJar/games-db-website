@@ -28,14 +28,7 @@
 	img:hover {
 		border: 3px solid #4bb543;
 	}
-	h2 {
-		font-size: 0.9rem;
-		font-weight: bolder;
-	}
-	.description {
-		height: 5vh;
-		font-weight: bolder;
-	}
+	
 
 	.game-card {
 		display: inline-block;
