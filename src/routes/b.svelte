@@ -1,5 +1,5 @@
 <script>
-	import { querystring, popgames } from './store';
+	import { querystring } from './store';
 	let data = {
 		props: {
 			g: [
@@ -262,7 +262,6 @@
 	};
 	console.log(data);
 	//export let popularGames;
-	let popularGames = JSON.parse($popgames);
 	//export let modes;
 	let modes = data.props.modes;
 	let searchGenre;

@@ -5,12 +5,10 @@
 		getFirestore,
 		collection,
 		updateDoc,
-		setDoc,
 		doc,
 		query,
 		getDocs
 	} from 'firebase/firestore';
-	import { onMount } from 'svelte';
 	const db = getFirestore(App);
 	export let game;
 	export let uid;
@@ -25,7 +23,6 @@
 		const usersDoc = collection(db, 'users');
 		let q = query(usersDoc, where('uid', '==', uid));
 		const querySnapshot = await getDocs(q);
-		let docId;
 		let ratingsArray;
 		querySnapshot.forEach((doc) => {
 			docId = doc.id;

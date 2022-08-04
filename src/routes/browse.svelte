@@ -11,7 +11,7 @@
 </script>
 
 <script>
-	import { querystring, popgames } from './store';
+	import { querystring } from './store';
 	let data = {
 		props: {
 			g: [
@@ -292,7 +292,7 @@
 
 	export let popularGames;
 
-	import PopularGame from '../components/PopularGame.svelte';
+	import GameCard from '../components/GameCard.svelte';
 	import Index from './index.svelte';
 	let query;
 
@@ -363,7 +363,7 @@
 				Authorization: 'Bearer sd089a9azgftad7tbbaroxitu6x71k',
 				'X-Requested-With': 'XMLHttpRequest'
 			},
-			body: `fields name, genres.name, platforms.name, release_dates.human, summary,screenshots.image_id, cover.image_id, artworks, involved_companies.company.name; sort follows desc; ${query}`
+			body: `fields name, genres.name, platforms.name, release_dates.human, summary,screenshots.image_id, cover.image_id, artworks, involved_companies.company.name; sort follows desc; ${query};`
 		})
 			.then((r) => r.json())
 			.then((data) => {
@@ -445,7 +445,7 @@
 			}
 		}
 
-		let q = 'limit 50; where cover.image_id != null & follows != null';
+		let q = 'limit 500; where cover.image_id != null & follows != null';
 		const flagsArray = [gFlag, pFlag, cFlag, mFlag, tFlag, perFlag];
 		for (let flag of flagsArray) {
 			if (flag.flag) {
@@ -971,11 +971,11 @@
 		<div class="games" in:fly={{ y: 50, duration: 400, delay: 500 }} out:fly={{ duration: 500 }}>
 			{#if continents}
 				{#each continents as game}
-					<PopularGame {game} />
+					<GameCard {game} />
 				{/each}
 			{:else}
 				{#each popularGames as game}
-					<PopularGame {game} />
+					<GameCard {game} />
 				{/each}
 			{/if}
 		</div>
@@ -985,9 +985,9 @@
 <style>
 	.games {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-		grid-column-gap: 1rem;
-		grid-row-gap: 2rem;
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		grid-column-gap: 0.3rem;
+		grid-row-gap: 0.3rem;
 		height: 20vh;
 	}
 	.searchbutton {

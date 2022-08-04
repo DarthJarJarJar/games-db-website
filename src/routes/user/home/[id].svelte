@@ -1,5 +1,7 @@
 <script context="module">
 	import App from '../../fb';
+	import StarRating from '../../../svelte-star-rating';
+
 	import {
 		updateDoc,
 		doc,
@@ -9,7 +11,8 @@
 		query,
 		where,
 		getDoc,
-		getDocs
+		getDocs,
+		orderBy
 	} from 'firebase/firestore';
 	const db = getFirestore(App);
 	export async function load({ params }) {
@@ -19,13 +22,14 @@
 		const querySnapshot = await getDocs(q);
 
 		querySnapshot.forEach((doc) => {
-			console.log(doc.id, ' => ', doc.data());
 			data = doc.data();
-			console.log(data);
 		});
 
+	
+		
+
 		return {
-			props: { arrayofgames: data }
+			props: { arrayofgames: data}
 		};
 	}
 </script>
@@ -47,10 +51,9 @@
 	let arraygames;
 	let homeButton;
 	let reviewsButton;
-
+	
 	const auth = getAuth(App);
 	let loggedIn;
-	console.log(arrayofgames);
 	auth.onAuthStateChanged((user) => {
 		if (user) {
 			if (user.uid === arrayofgames.uid) {
@@ -103,12 +106,24 @@
 				console.error(error);
 			});
 	};
+
+
+	function getProperDate(timestamp) {
+		let properDate = '';
+		const date = new Date(timestamp);
+		const month = date.toLocaleString('en-us', { month: 'long' });
+		const datedate = date.getDate();
+		const year = date.getFullYear();
+		properDate = month + ' ' + datedate + ' ' + year;
+
+		return properDate;
+	}
 </script>
 
 <section in:fly={{ y: 50, duration: 400, delay: 500 }} out:fly={{ duration: 500 }}>
 	{#if arrayofgames}
 		{#if name}
-			<div class="akd">
+			<div class="akdd">
 				<h1>
 					{name}'s Profile
 				</h1>
@@ -155,6 +170,8 @@
 	{/if}
 </section>
 
+
+
 <style>
 	.buttons {
 		align-items: right;
@@ -172,9 +189,10 @@
 		margin-top: 2rem;
 	}
 
-	.akd {
+	.akdd {
 		display: inline-flex;
 		width: 100%;
+
 	}
 
 	h1 {

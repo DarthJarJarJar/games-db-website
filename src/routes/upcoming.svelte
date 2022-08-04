@@ -29,7 +29,6 @@
 <script>
 	import { fly } from 'svelte/transition';
 	export let upcoming;
-	import Browse from '../components/Browse.svelte';
 	let searchKey = '';
 	import { goto } from '$app/navigation';
 	import PopularGame from '../components/PopularGame.svelte';

@@ -89,42 +89,7 @@
 </script>
 
 <section in:fly={{ y: 50, duration: 400, delay: 500 }} out:fly={{ duration: 500 }}>
-	{#if name}
-		<div class="akd">
-			<h1>
-				Welcome {name}
-			</h1>
-
-			<div class="buttons">
-				<button disabled id="backlog" type="button" class="btn btn-primary">Profile</button>
-				<button on:click={gamesButton} id="backlog" type="button" class="btn btn-primary"
-					>Games</button
-				>
-				<button on:click={backlogButton} id="backlog" type="button" class="btn btn-primary"
-					>Backlog</button
-				>
-				<button id="signout" on:click={logout} type="button" class="btn btn-danger">Sign Out</button
-				>
-			</div>
-		</div>
-		<h2>Favourites</h2>
-
-		<div class="games">
-			{#if continents}
-				{#if arrayofgames != []}
-					{#each continents as game}
-						<PopularGame {game} />
-					{/each}
-				{:else}
-					<div class="game">
-						<p class="loading">loading...</p>
-					</div>
-				{/if}
-			{/if}
-		</div>
-	{:else}
-		<h1>Loading...</h1>
-	{/if}
+	<h1>Loading profile...</h1>
 </section>
 
 <style>

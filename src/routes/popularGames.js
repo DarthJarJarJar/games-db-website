@@ -11,13 +11,17 @@ async function getGames() {
 		},
 		body: `fields name, cover.image_id, follows; sort follows desc; where rating != null & follows != null & first_release_date>${Math.floor(
 			recentTimeStamp / 1000
-		)} & first_release_date<${Math.floor(currentDate.getTime() / 1000)}; limit 50;`
+		)} & first_release_date<${Math.floor(currentDate.getTime() / 1000)}; limit 500;`
 	});
 
 	const data = await res.json();
 
 	return data;
 }
+
+
+
+
 export async function get() {
 	return {
 		body: await getGames()

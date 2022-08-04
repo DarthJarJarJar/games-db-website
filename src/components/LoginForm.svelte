@@ -6,16 +6,7 @@
 		createUserWithEmailAndPassword
 	} from 'firebase/auth';
 	import App from '../routes/fb';
-	import {
-		getFirestore,
-		collection,
-		addDoc,
-		setDoc,
-		doc,
-		query,
-		getDocs
-	} from 'firebase/firestore';
-	import { onMount } from 'svelte';
+	import { getFirestore, collection, addDoc, getDocs } from 'firebase/firestore';
 	const db = getFirestore();
 
 	let errorMessage;
@@ -38,13 +29,6 @@
 		}
 	};
 
-	const createUserDocNew = async (db, user, displayName) => {
-		await setDoc(doc(db, 'users', displayName), {
-			uid: user.uid,
-			backlog: []
-		});
-	};
-	let uniqueUsername = true;
 	async function checkUsername(displayName) {
 		let unique = true;
 		const querySnapshot = await getDocs(collection(db, 'users'));
@@ -56,11 +40,10 @@
 		return unique;
 	}
 
-	let finalAnswer;
 	checkUsername('anwar').then((unique) => console.log(unique));
 
 	async function checkUsernameForUniqueness(displayName) {
-		let res = await checkUsername(displayName);
+		await checkUsername(displayName);
 	}
 	checkUsernameForUniqueness('ayaan');
 	console.log(checkUsername('ayaan'));
@@ -110,23 +93,6 @@
 					errorMessage = 'This name is already in use';
 				}
 			});
-
-			/*
-
-            if(checkUsernameForUniqueness(displayName)){
-                createUserWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                const user = userCredential.user;
-                localStorage.setItem("uid", user.uid);
-                displayName = document.getElementById("displayName").value
-                createUserDocument(db, user, displayName)
-                goto("/profile/");
-            }) .catch((error) => {
-                alert(error);
-            })
-            }
-            errorMessage = "This username is already in use"
-            */
 		}
 	}
 </script>

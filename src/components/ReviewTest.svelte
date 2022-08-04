@@ -1,6 +1,5 @@
 <script>
 	import { Rating } from 'svelte-stars-hover-rating';
-	let includeReview = false;
 	export let game;
 	export let uid;
 	export let name;
@@ -9,13 +8,11 @@
 	console.log(uid);
 	const gameId = game;
 	let current = new Date();
-	import { element } from 'svelte/internal';
 	import {
 		doc,
 		setDoc,
 		getFirestore,
 		collection,
-		addDoc,
 		query,
 		where,
 		getDocs,
@@ -28,7 +25,6 @@
 	let review;
 	let isRated = false;
 	let spoiler = false;
-	import { fade, fly } from 'svelte/transition';
 	const config = {
 		showText: true
 	};
@@ -101,7 +97,6 @@
 		const usersDoc = collection(db, 'games');
 		let q = query(usersDoc, where('reviewBy', '==', uid));
 		const querySnapshot = await getDocs(q);
-		let docId;
 		let ratingsArray = [];
 		querySnapshot.forEach((doc) => {
 			docId = doc.id;
@@ -136,7 +131,6 @@
 		} else {
 			noRevs = false;
 		}
-		let docId;
 		let ratingsArray = [];
 		querySnapshot.forEach((doc) => {
 			docId = doc.id;

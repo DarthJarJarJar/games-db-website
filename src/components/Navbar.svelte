@@ -1,32 +1,14 @@
 <script>
 	import global from '../global.css';
-	let searchKey = '';
 	import { goto } from '$app/navigation';
 
 	import { page } from '$app/stores';
 	import SearchBox from './SearchBox.svelte';
 	$: path = $page.url.pathname;
-	import { getAuth, onAuthStateChanged } from 'firebase/auth';
-	import {
-		updateDoc,
-		doc,
-		getFirestore,
-		collection,
-		addDoc,
-		query,
-		where,
-		getDoc,
-		getDocs
-	} from 'firebase/firestore';
+	import { getAuth } from 'firebase/auth';
 	import App from '../routes/fb';
-	import { onMount } from 'svelte';
 	const auth = getAuth(App);
-	let signedIn = true;
 	let searchedUser = '';
-
-	function searchUser() {
-		goto(`/user/home/${searchedUser}`);
-	}
 </script>
 
 <nav class="navbar navbar-expand-lg ">

@@ -13,12 +13,11 @@
 <script>
 	import { fly } from 'svelte/transition';
 	export let searchResults;
-	import { popgames } from './store';
-	import Browse from '../components/Browse.svelte';
 	let searchKey = '';
 	import { goto } from '$app/navigation';
 	import PopularGame from '../components/PopularGame.svelte';
 	import { onMount } from 'svelte';
+import GameCard from '../components/GameCard.svelte';
 
 	function onSubmit() {
 		goto('/search/' + searchKey);
@@ -29,7 +28,7 @@
 	<h2>Popular Games</h2>
 	<div class="games">
 		{#each searchResults as game}
-			<PopularGame {game} />
+			<GameCard {game} />
 		{/each}
 	</div>
 </section>
@@ -37,14 +36,14 @@
 <style>
 	.games {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-		grid-column-gap: 1rem;
-		grid-row-gap: 2rem;
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		grid-column-gap: 0.3rem;
+		grid-row-gap: 0.3rem;
 		height: 20vh;
-		margin-top: 2rem;
 	}
 
 	h2 {
 		margin-top: 2rem;
+		margin-bottom: 2rem;
 	}
 </style>
