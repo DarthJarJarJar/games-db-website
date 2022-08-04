@@ -19,9 +19,6 @@ async function getGames() {
 	return data;
 }
 
-
-
-
 export async function get() {
 	return {
 		body: await getGames()

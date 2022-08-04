@@ -17,8 +17,7 @@
 			/></a
 		>
 		<div class="description">
-			<h2>{game.name}</h2>
-			<StarRating {rating} {config} />
+			<StarRating {rating} />
 		</div>
 	</div>
 {:else}
@@ -31,8 +30,8 @@
 	img {
 		width: 100%;
 		object-fit: cover;
-		border-radius: 1rem;
-		margin-bottom: 1rem;
+		border-radius: 0.4rem;
+		margin-bottom: 0.3rem;
 	}
 	h2 {
 		font-size: 0.9rem;
@@ -47,8 +46,8 @@
 		display: inline-block;
 		flex-direction: column;
 		justify-content: space-around;
-		padding: 1rem;
 		max-height: 448px;
 		max-width: 306px;
+		padding-left: 0.5rem;
 	}
 </style>

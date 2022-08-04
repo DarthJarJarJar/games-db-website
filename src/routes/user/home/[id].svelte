@@ -25,11 +25,8 @@
 			data = doc.data();
 		});
 
-	
-		
-
 		return {
-			props: { arrayofgames: data}
+			props: { arrayofgames: data }
 		};
 	}
 </script>
@@ -51,7 +48,7 @@
 	let arraygames;
 	let homeButton;
 	let reviewsButton;
-	
+
 	const auth = getAuth(App);
 	let loggedIn;
 	auth.onAuthStateChanged((user) => {
@@ -106,7 +103,6 @@
 				console.error(error);
 			});
 	};
-
 
 	function getProperDate(timestamp) {
 		let properDate = '';
@@ -170,8 +166,6 @@
 	{/if}
 </section>
 
-
-
 <style>
 	.buttons {
 		align-items: right;
@@ -192,7 +186,6 @@
 	.akdd {
 		display: inline-flex;
 		width: 100%;
-
 	}
 
 	h1 {

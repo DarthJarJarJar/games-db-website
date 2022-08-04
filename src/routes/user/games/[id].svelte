@@ -144,11 +144,11 @@
 
 	.games {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-		grid-column-gap: 1rem;
-		grid-row-gap: 2rem;
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		grid-column-gap: 0.5rem;
+		grid-row-gap: 0.5rem;
 		height: 20vh;
-		margin-top: 2rem;
+		margin-top: 0.5rem;
 	}
 
 	.akd {
@@ -157,6 +157,9 @@
 	}
 
 	h1 {
+		margin-bottom: 2rem;
+	}
+	h2 {
 		margin-bottom: 2rem;
 	}
 </style>

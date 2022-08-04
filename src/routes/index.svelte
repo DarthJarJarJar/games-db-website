@@ -17,7 +17,7 @@
 	import { goto } from '$app/navigation';
 	import PopularGame from '../components/PopularGame.svelte';
 	import { onMount } from 'svelte';
-import GameCard from '../components/GameCard.svelte';
+	import GameCard from '../components/GameCard.svelte';
 
 	function onSubmit() {
 		goto('/search/' + searchKey);
