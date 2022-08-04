@@ -132,6 +132,7 @@
 			noRevs = false;
 		}
 		let ratingsArray = [];
+		let docId;
 		querySnapshot.forEach((doc) => {
 			docId = doc.id;
 			let pushObj = {};
