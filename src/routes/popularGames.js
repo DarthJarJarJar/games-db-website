@@ -1,6 +1,6 @@
 import proxyURL from '../proxy';
 const currentDate = new Date();
-let recentTimeStamp = currentDate.getTime() - 15778800000;
+let recentTimeStamp = currentDate.getTime() - 31557600000;
 async function getGames() {
 	const res = await fetch(`${proxyURL}https://api.igdb.com/v4/games/`, {
 		method: 'POST',
