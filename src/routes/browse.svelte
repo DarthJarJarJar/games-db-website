@@ -11,7 +11,6 @@
 </script>
 
 <script>
-	import { querystring } from './store';
 	let data = {
 		props: {
 			g: [
