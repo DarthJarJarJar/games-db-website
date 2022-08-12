@@ -1,6 +1,3 @@
-const currentDate = new Date();
-let recentTimeStamp = currentDate.getTime() - 15778800000;
-let data3;
 async function getFilters() {
 	const res = await fetch(
 		`https://powerful-fjord-21607.herokuapp.com/https://api.igdb.com/v4/genres/`,
