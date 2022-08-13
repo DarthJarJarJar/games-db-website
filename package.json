@@ -33,6 +33,6 @@
 		"firebase": "^9.8.4",
 		"firebase-admin": "^11.0.0",
 		"svelte-stars-hover-rating": "^1.0.7",
-		"svelte-stars-rating": "^1.0.3",
+		"svelte-stars-rating": "^1.0.3"
 	}
 }
