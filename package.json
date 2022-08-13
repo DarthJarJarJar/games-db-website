@@ -27,18 +27,12 @@
 	"type": "module",
 	"dependencies": {
 		"@ernane/svelte-star-rating": "^1.1.0",
-		"@okrad/svelte-progressbar": "^1.11.3",
 		"cookie": "^0.5.0",
 		"cors": "^2.8.5",
 		"cors-anywhere": "^0.4.4",
 		"firebase": "^9.8.4",
 		"firebase-admin": "^11.0.0",
-		"percircle": "^1.0.33",
-		"svelte-progresscircle": "^0.3.0",
 		"svelte-stars-hover-rating": "^1.0.7",
 		"svelte-stars-rating": "^1.0.3",
-		"svelte-theme-toggle": "^1.1.2",
-		"sveltestrap": "^5.9.0",
-		"ui-progress-circle": "^1.1.0"
 	}
 }
