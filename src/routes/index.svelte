@@ -46,7 +46,7 @@
 
 
 	async function addGames() {
-		const res = await fetch('http://localhost:3000/popularGames');
+		const res = await fetch('https://gamescg.netlify.app/popularGames');
 
 		if (res.ok) return { props: { searchResults: await res.json() } };
 		return {
