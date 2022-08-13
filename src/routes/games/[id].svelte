@@ -43,7 +43,7 @@
 		getDocs
 	} from 'firebase/firestore';
 	import dubey from '../../components/Rating.svelte';
-	import 'ui-progress-circle';
+
 
 	const db = getFirestore();
 	let value = 10;
