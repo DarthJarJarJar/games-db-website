@@ -24,7 +24,6 @@
 <script>
 	import { goto } from '$app/navigation';
 	import Rating from '../../components/Rating.svelte';
-	import ProgressCircle from 'svelte-progresscircle';
 	import ReviewCard from '../../components/ReviewCard.svelte';
 	import App from '../fb';
 	import ReviewTest from '../../components/ReviewTest.svelte';
