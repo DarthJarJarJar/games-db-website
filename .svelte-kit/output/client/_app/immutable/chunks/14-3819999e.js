@@ -1,0 +1,1 @@
+import{_ as a}from"./_page-46d2f8cb.js";import{default as s}from"../components/pages/reviews/_page.svelte-2c5aaa3f.js";import"./index-90ebcfae-1d2b0ced.js";import"./index.esm2017-57c490d6.js";import"./fb-599afce9.js";import"./index.esm-e3c7d839.js";import"./index-4fb290ec.js";export{s as component,a as shared};

@@ -6,7 +6,7 @@
 	import SearchBox from './SearchBox.svelte';
 	$: path = $page.url.pathname;
 	import { getAuth } from 'firebase/auth';
-	import App from '../routes/fb';
+	import App from '../fb';
 	const auth = getAuth(App);
 	let searchedUser = '';
 </script>

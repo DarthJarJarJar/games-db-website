@@ -11,7 +11,7 @@
    let current = new Date()
    import { element } from "svelte/internal";
    import { doc, setDoc, getFirestore, collection, addDoc, query, where, getDocs, updateDoc} from "firebase/firestore"; 
-   import App from "../../src/routes/fb"
+   import App from "../fb"
    const db = getFirestore(App)
    import StarRating from '../svelte-star-rating';
        let ratingNum;

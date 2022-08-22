@@ -5,7 +5,7 @@
 		signInWithEmailAndPassword,
 		createUserWithEmailAndPassword
 	} from 'firebase/auth';
-	import App from '../routes/fb';
+	import App from '../fb';
 	import { getFirestore, collection, addDoc, getDocs } from 'firebase/firestore';
 	const db = getFirestore();
 

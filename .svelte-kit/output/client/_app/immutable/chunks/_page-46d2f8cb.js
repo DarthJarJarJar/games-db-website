@@ -1,0 +1,1 @@
+import{g as o}from"./index-90ebcfae-1d2b0ced.js";import"./index.esm2017-57c490d6.js";import{U as t,a as e}from"./fb-599afce9.js";t(e);const a=o(e);async function r({params:n}){return console.log(a.currentUser),{reviewData:1}}const c=Object.freeze(Object.defineProperty({__proto__:null,load:r},Symbol.toStringTag,{value:"Module"}));export{c as _,r as l};

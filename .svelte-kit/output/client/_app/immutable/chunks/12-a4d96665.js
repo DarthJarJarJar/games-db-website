@@ -1,0 +1,1 @@
+import{_ as a}from"./_page-bed57d21.js";import{default as s}from"../components/pages/platforms/_id_/_page.svelte-66d09550.js";import"./index-4fb290ec.js";import"./PopularGame-5dc6c243.js";/* empty css                                                  */import"./index-6273de8d.js";/* empty css                                           */export{s as component,a as shared};

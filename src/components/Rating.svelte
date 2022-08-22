@@ -1,5 +1,5 @@
 <script>
-	import App from '../routes/fb';
+	import App from '../fb';
 	import {
 		where,
 		getFirestore,
