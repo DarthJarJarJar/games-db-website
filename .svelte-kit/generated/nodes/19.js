@@ -1,3 +1,1 @@
-import * as shared from "../../../src/routes/upcoming/+page.js";
-export { shared };
-export { default as component } from "../../../src/routes/upcoming/+page.svelte";
+export { default as component } from "../../../src/routes/testingclone/+page.svelte";

@@ -1,7 +1,7 @@
 const currentDate = new Date();
 let recentTimeStamp = currentDate.getTime() - 15778800000;
 console.log(recentTimeStamp);
-export async function load({ fetch, params }) {
+export async function load({ fetch  }) {
 	const res2 = await fetch(
 		`https://powerful-fjord-21607.herokuapp.com/https://api.igdb.com/v4/games/`,
 		{
@@ -11,13 +11,13 @@ export async function load({ fetch, params }) {
 				Authorization: 'Bearer eusymeo73nswru9jiajpm2oij93hdb',
 				'X-Requested-With': 'XMLHttpRequest'
 			},
-			body: `fields name, cover.image_id, follows; sort follows desc; where follows != null & first_release_date>${Math.floor(
-					currentDate.getTime() / 1000
-				)};`
-		}
+			body: `fields name, involved_companies.company.name, genres.name, first_release_date, screenshots.image_id, cover.image_id, platforms.abbreviation, summary; sort follows desc; where rating != null & follows != null & id = (7334,114283,26192,19560);`
+		} 
 	);
 
 	const data2 = await res2.json();
 
-	return { upcoming: data2 };
+	return data2;
 }
+
+	

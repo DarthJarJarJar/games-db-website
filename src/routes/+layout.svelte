@@ -1,5 +1,5 @@
 <script>
-	import global from '../global.css';
+	
 	let searchKey = '';
 	import { goto } from '$app/navigation';
 

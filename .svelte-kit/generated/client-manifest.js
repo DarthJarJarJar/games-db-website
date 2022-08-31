@@ -24,11 +24,12 @@ export const nodes = [
 	() => import('./nodes/20'),
 	() => import('./nodes/21'),
 	() => import('./nodes/22'),
-	() => import('./nodes/23')
+	() => import('./nodes/23'),
+	() => import('./nodes/24')
 ];
 
 export const dictionary = {
-	"": [[1], [0], 2],
+	"": [[1], [0], 2, 1],
 	"b": [[1], [0], 3],
 	"ba": [[1], [0], 4],
 	"browse": [[1], [0], 5],
@@ -39,13 +40,14 @@ export const dictionary = {
 	"profile": [[1], [0], 13],
 	"reviews": [[1], [0], 14],
 	"signup": [[1], [0], 16],
-	"testing": [[1], [0], 17],
-	"testingclone": [[1], [0], 18],
-	"upcoming": [[1], [0], 19],
-	"user/backlog/[id]": [[1], [0], 20],
-	"user/games/[id]": [[1], [0], 21],
-	"user/home/[id]": [[1], [0], 22],
-	"user/reviews/[id]": [[1], [0], 23],
+	"tes": [[1], [0], 17, 1],
+	"testing": [[1], [0], 18],
+	"testingclone": [[1], [0], 19],
+	"upcoming": [[1], [0], 20],
+	"user/backlog/[id]": [[1], [0], 21],
+	"user/games/[id]": [[1], [0], 22],
+	"user/home/[id]": [[1], [0], 23],
+	"user/reviews/[id]": [[1], [0], 24],
 	"games/[id]": [[1], [0], 7],
 	"genres/[id]": [[1], [0], 8],
 	"platforms/[id]": [[1], [0], 12],

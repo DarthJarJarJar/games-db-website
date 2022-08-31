@@ -347,7 +347,7 @@
 			method: 'POST',
 			headers: {
 				'Client-ID': 'o5xvtlqq670n8hhzz05rvwpbr7hjt4',
-				Authorization: 'Bearer sd089a9azgftad7tbbaroxitu6x71k',
+				Authorization: 'Bearer eusymeo73nswru9jiajpm2oij93hdb',
 				'X-Requested-With': 'XMLHttpRequest'
 			},
 			body: `fields name, genres.name, platforms.name, release_dates.human, summary,screenshots.image_id, cover.image_id, artworks, involved_companies.company.name; sort follows desc; ${query};`

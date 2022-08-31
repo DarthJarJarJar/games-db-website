@@ -21,7 +21,7 @@ async function getGames() {
 	return [data]
 }
  
-/** @type {import('./$types').PageServerLoad} */
+/** */
 export async function load() {
   const post = await getGames();
  
