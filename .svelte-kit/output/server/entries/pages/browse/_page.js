@@ -6,7 +6,7 @@ async function load({ fetch }) {
     method: "POST",
     headers: {
       "Client-ID": "o5xvtlqq670n8hhzz05rvwpbr7hjt4",
-      Authorization: "Bearer eusymeo73nswru9jiajpm2oij93hdb",
+      Authorization: "Bearer hu9mx2ypl56r9t9rcimgekfa3x1vx8",
       "X-Requested-With": "XMLHttpRequest"
     },
     body: `fields name, cover.image_id, follows; sort follows desc; where rating != null & follows != null & first_release_date>${Math.floor(

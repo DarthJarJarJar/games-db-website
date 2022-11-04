@@ -1,6 +1,6 @@
 <script>
 	export let data;
-
+	
 	let searchResults = data.searchResults;
 	import { fly } from 'svelte/transition';
 	import PopularGame from '../../../components/PopularGame.svelte';

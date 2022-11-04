@@ -8,7 +8,7 @@ export async function load({ fetch  }) {
 			method: 'POST',
 			headers: {
 				'Client-ID': 'o5xvtlqq670n8hhzz05rvwpbr7hjt4',
-				Authorization: 'Bearer eusymeo73nswru9jiajpm2oij93hdb',
+				Authorization: 'Bearer hu9mx2ypl56r9t9rcimgekfa3x1vx8',
 				'X-Requested-With': 'XMLHttpRequest'
 			},
 			body: `fields name, involved_companies.company.name, genres.name, first_release_date, screenshots.image_id, cover.image_id, platforms.abbreviation, summary; sort follows desc; where rating != null & follows != null & id = (7334,114283,26192,19560);`

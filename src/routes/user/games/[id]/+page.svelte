@@ -22,6 +22,8 @@
 		arraygames.push(gameObj.id);
 	}
 
+
+	console.log("HERE IS THE ARRAY")
 	console.log(arraygames);
 
 	function homeButton() {
@@ -42,13 +44,14 @@
 			method: 'POST',
 			headers: {
 				'Client-ID': 'o5xvtlqq670n8hhzz05rvwpbr7hjt4',
-				Authorization: 'Bearer eusymeo73nswru9jiajpm2oij93hdb',
+				Authorization: 'Bearer hu9mx2ypl56r9t9rcimgekfa3x1vx8',
 				'X-Requested-With': 'XMLHttpRequest'
 			},
-			body: `fields name, cover.image_id, follows;  where id=(${arraygames});`
+			body: `fields name, cover.image_id, follows;  where id=(${arraygames}); limit 500;`
 		})
 			.then((r) => r.json())
 			.then((data) => {
+				console.log("HERE IS THE DATa", data)
 				continents = data;
 				for (let c of data) {
 				}

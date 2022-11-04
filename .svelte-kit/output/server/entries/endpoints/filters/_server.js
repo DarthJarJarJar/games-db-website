@@ -5,7 +5,7 @@ async function getFilters() {
       method: "POST",
       headers: {
         "Client-ID": "o5xvtlqq670n8hhzz05rvwpbr7hjt4",
-        Authorization: "Bearer eusymeo73nswru9jiajpm2oij93hdb",
+        Authorization: "Bearer hu9mx2ypl56r9t9rcimgekfa3x1vx8",
         "X-Requested-With": "XMLHttpRequest"
       },
       body: `fields name; limit 31;`
@@ -18,7 +18,7 @@ async function getFilters() {
       method: "POST",
       headers: {
         "Client-ID": "o5xvtlqq670n8hhzz05rvwpbr7hjt4",
-        Authorization: "Bearer eusymeo73nswru9jiajpm2oij93hdb",
+        Authorization: "Bearer hu9mx2ypl56r9t9rcimgekfa3x1vx8",
         "X-Requested-With": "XMLHttpRequest"
       },
       body: `fields name, abbreviation ; limit 500;sort created_at desc;`
@@ -31,7 +31,7 @@ async function getFilters() {
       method: "POST",
       headers: {
         "Client-ID": "o5xvtlqq670n8hhzz05rvwpbr7hjt4",
-        Authorization: "Bearer eusymeo73nswru9jiajpm2oij93hdb",
+        Authorization: "Bearer hu9mx2ypl56r9t9rcimgekfa3x1vx8",
         "X-Requested-With": "XMLHttpRequest"
       },
       body: `fields name ; limit 500;sort created_at desc;`
@@ -44,7 +44,7 @@ async function getFilters() {
       method: "POST",
       headers: {
         "Client-ID": "o5xvtlqq670n8hhzz05rvwpbr7hjt4",
-        Authorization: "Bearer eusymeo73nswru9jiajpm2oij93hdb",
+        Authorization: "Bearer hu9mx2ypl56r9t9rcimgekfa3x1vx8",
         "X-Requested-With": "XMLHttpRequest"
       },
       body: `fields name ; limit 500;`
@@ -57,7 +57,7 @@ async function getFilters() {
       method: "POST",
       headers: {
         "Client-ID": "o5xvtlqq670n8hhzz05rvwpbr7hjt4",
-        Authorization: "Bearer eusymeo73nswru9jiajpm2oij93hdb",
+        Authorization: "Bearer hu9mx2ypl56r9t9rcimgekfa3x1vx8",
         "X-Requested-With": "XMLHttpRequest"
       },
       body: `fields name ; limit 500;`
