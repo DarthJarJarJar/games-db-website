@@ -93,32 +93,6 @@
 </section>
 
 <style>
-	.buttons {
-		align-items: right;
-		justify-content: right;
-		align-content: right;
-		margin-left: auto;
-	}
-
-	button {
-		margin-top: 0.3rem;
-		margin-bottom: 0.3rem;
-	}
-
-	.games {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-		grid-column-gap: 1rem;
-		grid-row-gap: 2rem;
-		height: 20vh;
-		margin-top: 2rem;
-	}
-
-	.akd {
-		display: inline-flex;
-		width: 100%;
-	}
-
 	h1 {
 		margin-bottom: 2rem;
 		margin-right: 2rem;

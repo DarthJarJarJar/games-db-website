@@ -6,6 +6,7 @@
 	import { onMount } from 'svelte';
 	import PopularGame from '../../../../components/PopularGame.svelte';
 	import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
+	import GameCard from '../../../../components/GameCard.svelte';
 
 	let favs;
 	let continents;
@@ -72,7 +73,7 @@
 			{#if continents}
 				{#if arraygames != []}
 					{#each continents as game}
-						<PopularGame {game} />
+						<GameCard {game} />
 					{/each}
 				{:else}
 					<div class="game">
@@ -96,7 +97,7 @@
 
 	.games {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 		grid-column-gap: 1rem;
 		grid-row-gap: 2rem;
 		height: 20vh;

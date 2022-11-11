@@ -35,7 +35,7 @@
 <style>
 	.games {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 		grid-column-gap: 0.3rem;
 		grid-row-gap: 0.3rem;
 		height: 20vh;

@@ -1,13 +1,9 @@
 import App from '../../../../fb';
 import {
-	updateDoc,
-	doc,
 	getFirestore,
 	collection,
-	addDoc,
 	query,
 	where,
-	getDoc,
 	getDocs
 } from 'firebase/firestore';
 const db = getFirestore(App);

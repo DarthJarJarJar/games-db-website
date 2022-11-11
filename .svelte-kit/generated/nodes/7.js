@@ -1,3 +1,3 @@
-import * as shared from "../../../src/routes/games/[id]/+page.js";
+import * as shared from "../../../src/routes/platforms/[id]/+page.js";
 export { shared };
-export { default as component } from "../../../src/routes/games/[id]/+page.svelte";
+export { default as component } from "../../../src/routes/platforms/[id]/+page.svelte";
