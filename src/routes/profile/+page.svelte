@@ -53,7 +53,7 @@
 				arrayofgames = favs;
 				console.log(arrayofgames);
 				if (arrayofgames != []) {
-					await fetch(`https://powerful-fjord-21607.herokuapp.com/https://api.igdb.com/v4/games/`, {
+					await fetch(`https://web-production-6d47.up.railway.app/https://api.igdb.com/v4/games/`, {
 						method: 'POST',
 						headers: {
 							'Client-ID': 'o5xvtlqq670n8hhzz05rvwpbr7hjt4',

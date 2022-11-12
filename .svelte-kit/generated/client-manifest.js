@@ -22,7 +22,7 @@ export const nodes = [
 
 export const dictionary = {
 	"": [[1], [0], 2, 1],
-	"browse": [[1], [0], 3],
+	"browse": [[1], [0], 3, 1],
 	"login": [[1], [0], 6],
 	"profile": [[1], [0], 8],
 	"reviews": [[1], [0], 9],

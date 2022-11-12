@@ -3,7 +3,7 @@ let recentTimeStamp = currentDate.getTime() - 157788e5;
 console.log(recentTimeStamp);
 async function load({ fetch, params }) {
   const res2 = await fetch(
-    `https://powerful-fjord-21607.herokuapp.com/https://api.igdb.com/v4/games/`,
+    `https://web-production-6d47.up.railway.app/https://api.igdb.com/v4/games/`,
     {
       method: "POST",
       headers: {

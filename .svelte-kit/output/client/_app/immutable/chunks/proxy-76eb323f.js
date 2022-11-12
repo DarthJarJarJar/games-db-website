@@ -1,1 +1,1 @@
-const o="https://powerful-fjord-21607.herokuapp.com/";export{o as p};
+const o="https://web-production-6d47.up.railway.app/";export{o as p};
