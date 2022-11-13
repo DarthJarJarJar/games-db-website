@@ -1,3 +1,6 @@
+# Forked this repo and made a few changes to fit the use case
+
+
 # Svelte Star Rating
 
 ## What is this
