@@ -1,1 +1,0 @@
-import{default as e}from"../components/pages/igdb/_page.svelte-d9265844.js";import"./index-4fb290ec.js";import"./StarRating-35967b67.js";/* empty css                                                 */export{e as component};
