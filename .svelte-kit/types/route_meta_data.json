@@ -1,0 +1,50 @@
+{
+	"/": [
+		"src/routes/+page.server.js"
+	],
+	"/browse": [
+		"src/routes/browse/+page.server.js"
+	],
+	"/filters": [
+		"src/routes/filters/+server.js"
+	],
+	"/games/[id]": [
+		"src/routes/games/[id]/+page.js"
+	],
+	"/genres/[id]": [
+		"src/routes/genres/[id]/+page.js"
+	],
+	"/login": [],
+	"/offsetGames": [
+		"src/routes/offsetGames/+server.js"
+	],
+	"/platforms/[id]": [
+		"src/routes/platforms/[id]/+page.js"
+	],
+	"/popularGames": [
+		"src/routes/popularGames/+server.js"
+	],
+	"/profile": [],
+	"/reviews": [
+		"src/routes/reviews/+page.js"
+	],
+	"/search/[id]": [
+		"src/routes/search/[id]/+page.js"
+	],
+	"/signup": [],
+	"/upcoming": [
+		"src/routes/upcoming/+page.js"
+	],
+	"/user/backlog/[id]": [
+		"src/routes/user/backlog/[id]/+page.js"
+	],
+	"/user/games/[id]": [
+		"src/routes/user/games/[id]/+page.js"
+	],
+	"/user/home/[id]": [
+		"src/routes/user/home/[id]/+page.js"
+	],
+	"/user/reviews/[id]": [
+		"src/routes/user/reviews/[id]/+page.js"
+	]
+}

@@ -1,0 +1,39 @@
+{
+	"name": "gamedb",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"package": "svelte-kit package",
+		"preview": "vite preview",
+		"prepare": "svelte-kit sync",
+		"lint": "prettier --check --plugin-search-dir=. . && eslint .",
+		"format": "prettier --write --plugin-search-dir=. .",
+		"deploy": "git add . && git commit -m 'commit' && git push origin main"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "next",
+		"@sveltejs/kit": "next",
+		"eslint": "^8.16.0",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-svelte3": "^4.0.0",
+		"prettier": "^2.6.2",
+		"prettier-plugin-svelte": "^2.7.0",
+		"sass": "^1.53.0",
+		"svelte": "^3.48.0",
+		"svelte-dark-mode": "^2.1.0",
+		"svelte-preprocess": "^4.10.7"
+	},
+	"type": "module",
+	"dependencies": {
+		"@ernane/svelte-star-rating": "^1.1.0",
+		"cookie": "^0.5.0",
+		"cors": "^2.8.5",
+		"cors-anywhere": "^0.4.4",
+		"firebase": "^9.8.4",
+		"firebase-admin": "^11.0.0",
+		"svelte-stars-hover-rating": "^1.0.7",
+		"svelte-stars-rating": "^1.0.3",
+		"vite": "^3.0.9"
+	}
+}
