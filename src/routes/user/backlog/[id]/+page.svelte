@@ -11,8 +11,11 @@
 	let favs;
 	let continents;
 	export let data
+	console.log(data)
 	let arrayofgames = data.arrayofgames;
+	continents = data.continents
 	let name = arrayofgames.displayName;
+	console.log(continents)
 
 	let arraygames = arrayofgames.backlog;
 	function homeButton() {
@@ -28,23 +31,6 @@
 		goto(`../../user/reviews/${name.toLowerCase()}`);
 	}
 
-	onMount(async () => {
-		await fetch(`https://web-production-6d47.up.railway.app/https://api.igdb.com/v4/games/`, {
-			method: 'POST',
-			headers: {
-				'Client-ID': 'o5xvtlqq670n8hhzz05rvwpbr7hjt4',
-				Authorization: 'Bearer hu9mx2ypl56r9t9rcimgekfa3x1vx8',
-				'X-Requested-With': 'XMLHttpRequest'
-			},
-			body: `fields name, cover.image_id, follows;  where id=(${arraygames});`
-		})
-			.then((r) => r.json())
-			.then((data) => {
-				continents = data;
-				for (let c of data) {
-				}
-			});
-	});
 </script>
 
 <section in:fly={{ y: 50, duration: 400, delay: 500 }} out:fly={{ duration: 500 }}>

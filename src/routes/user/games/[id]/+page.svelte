@@ -10,8 +10,9 @@
 	import StarRating from '../../../../svelte-star-rating';
 
 	let favs;
-	let continents;
+	
 	export let data;
+	let continents = data.continents;
 	
 	let arrayofgames=data.arrayofgames;
 	console.log(arrayofgames.name);
@@ -24,7 +25,7 @@
 
 
 	console.log("HERE IS THE ARRAY")
-	console.log(arraygames);
+	console.log(data.continents)
 
 	function homeButton() {
 		goto(`../../user/home/${name.toLowerCase()}`);
@@ -39,24 +40,24 @@
 		goto(`../../user/reviews/${name.toLowerCase()}`);
 	}
 
-	onMount(async () => {
-		await fetch(`https://web-production-6d47.up.railway.app/https://api.igdb.com/v4/games/`, {
-			method: 'POST',
-			headers: {
-				'Client-ID': 'o5xvtlqq670n8hhzz05rvwpbr7hjt4',
-				Authorization: 'Bearer hu9mx2ypl56r9t9rcimgekfa3x1vx8',
-				'X-Requested-With': 'XMLHttpRequest'
-			},
-			body: `fields name, cover.image_id, follows;  where id=(${arraygames}); limit 500;`
-		})
-			.then((r) => r.json())
-			.then((data) => {
-				console.log("HERE IS THE DATa", data)
-				continents = data;
-				for (let c of data) {
-				}
-			});
-	});
+	// onMount(async () => {
+	// 	await fetch(`https://api.igdb.com/v4/games/`, {
+	// 		method: 'POST',
+	// 		headers: {
+	// 			'Client-ID': 'o5xvtlqq670n8hhzz05rvwpbr7hjt4',
+	// 			Authorization: 'Bearer hu9mx2ypl56r9t9rcimgekfa3x1vx8',
+	// 			'X-Requested-With': 'XMLHttpRequest'
+	// 		},
+	// 		body: `fields name, cover.image_id, follows;  where id=(${arraygames}); limit 500;`
+	// 	})
+	// 		.then((r) => r.json())
+	// 		.then((data) => {
+	// 			console.log("HERE IS THE DATa", data)
+	// 			continents = data;
+	// 			for (let c of data) {
+	// 			}
+	// 		});
+	// });
 
 	function getRating(game) {
 		for (let gameobject of ratingsObject) {

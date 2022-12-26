@@ -19,6 +19,11 @@
 	let arraygames;
 	let homeButton;
 	let reviewsButton;
+	console.log("========")
+	console.log(data)	
+	console.log("========")
+	arraygames = data.arraygames
+	continents = arraygames
 
 	const auth = getAuth(App);
 	let loggedIn;
@@ -46,23 +51,23 @@
 		reviewsButton = () => {
 			goto(`../../user/reviews/${name.toLowerCase()}`);
 		};
-		onMount(async () => {
-			await fetch(`https://web-production-6d47.up.railway.app/https://api.igdb.com/v4/games/`, {
-				method: 'POST',
-				headers: {
-					'Client-ID': 'o5xvtlqq670n8hhzz05rvwpbr7hjt4',
-					Authorization: 'Bearer hu9mx2ypl56r9t9rcimgekfa3x1vx8',
-					'X-Requested-With': 'XMLHttpRequest'
-				},
-				body: `fields name, cover.image_id, follows;  where id=(${arraygames});`
-			})
-				.then((r) => r.json())
-				.then((data) => {
-					continents = data;
-					for (let c of data) {
-					}
-				});
-		});
+		// onMount(async () => {
+		// 	await fetch(`https://api.igdb.com/v4/games/`, {
+		// 		method: 'POST',
+		// 		headers: {
+		// 			'Client-ID': 'o5xvtlqq670n8hhzz05rvwpbr7hjt4',
+		// 			Authorization: 'Bearer hu9mx2ypl56r9t9rcimgekfa3x1vx8',
+		// 			'X-Requested-With': 'XMLHttpRequest'
+		// 		},
+		// 		body: `fields name, cover.image_id, follows;  where id=(${arraygames});`
+		// 	})
+		// 		.then((r) => r.json())
+		// 		.then((data) => {
+		// 			continents = data;
+		// 			for (let c of data) {
+		// 			}
+		// 		});
+		// });
 	}
 
 	const logout = async () => {
@@ -117,9 +122,9 @@
 			<h2>Favourites</h2>
 
 			<div class="games">
-				{#if continents}
+				{#if data.continents}
 					{#if arraygames != []}
-						{#each continents as game}
+						{#each data.continents as game}
 							<PopularGame {game} />
 						{/each}
 					{:else}

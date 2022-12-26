@@ -1,6 +1,6 @@
 export async function load({ fetch, params }) {
 	const res = await fetch(
-		`https://web-production-6d47.up.railway.app/https://api.igdb.com/v4/search/`,
+		`https://api.igdb.com/v4/games/`,
 		{
 			method: 'POST',
 			headers: {
@@ -8,11 +8,11 @@ export async function load({ fetch, params }) {
 				Authorization: 'Bearer hu9mx2ypl56r9t9rcimgekfa3x1vx8',
 				'X-Requested-With': 'XMLHttpRequest'
 			},
-			body: `search "${params.id}"; fields name, game.cover.image_id, game.name; where game.cover.image_id != null & game.version_parent = null & game.screenshots != null;`
+			body: `fields name, genres.name, platforms.name, release_dates.human, summary,screenshots.image_id, cover.image_id, artworks, involved_companies.company.name; sort follows desc; where platforms = ${params.id} & follows != null;`
 		}
 	);
 
 	const data = await res.json();
-	console.log(data);
+
 	return { searchResults: data };
 }

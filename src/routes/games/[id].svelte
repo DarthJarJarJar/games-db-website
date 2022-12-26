@@ -1,7 +1,7 @@
 <script context="module">
 	export async function load({ fetch, params }) {
 		const res = await fetch(
-			`https://web-production-6d47.up.railway.app/https://api.igdb.com/v4/games/`,
+			`https://api.igdb.com/v4/games/`,
 			{
 				method: 'POST',
 				headers: {

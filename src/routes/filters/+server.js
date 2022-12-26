@@ -1,6 +1,6 @@
 async function getFilters() {
 	const res = await fetch(
-		`https://web-production-6d47.up.railway.app/https://api.igdb.com/v4/genres/`,
+		`https://api.igdb.com/v4/genres/`,
 		{
 			method: 'POST',
 			headers: {
@@ -15,7 +15,7 @@ async function getFilters() {
 	const data = await res.json();
 
 	const res2 = await fetch(
-		`https://web-production-6d47.up.railway.app/https://api.igdb.com/v4/platforms/`,
+		`https://api.igdb.com/v4/platforms/`,
 		{
 			method: 'POST',
 			headers: {
@@ -30,7 +30,7 @@ async function getFilters() {
 	const data2 = await res2.json();
 
 	const res4 = await fetch(
-		`https://web-production-6d47.up.railway.app/https://api.igdb.com/v4/game_modes/`,
+		`https://api.igdb.com/v4/game_modes/`,
 		{
 			method: 'POST',
 			headers: {
@@ -45,7 +45,7 @@ async function getFilters() {
 	const data4 = await res4.json();
 
 	const res5 = await fetch(
-		`https://web-production-6d47.up.railway.app/https://api.igdb.com/v4/themes/`,
+		`https://api.igdb.com/v4/themes/`,
 		{
 			method: 'POST',
 			headers: {
@@ -60,7 +60,7 @@ async function getFilters() {
 	const data5 = await res5.json();
 
 	const res6 = await fetch(
-		`https://web-production-6d47.up.railway.app/https://api.igdb.com/v4/player_perspectives/`,
+		`https://api.igdb.com/v4/player_perspectives/`,
 		{
 			method: 'POST',
 			headers: {
