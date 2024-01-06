@@ -4,8 +4,8 @@ export async function load({ fetch, params }) {
 		{
 			method: 'POST',
 			headers: {
-				'Client-ID': 'o5xvtlqq670n8hhzz05rvwpbr7hjt4',
-				Authorization: 'Bearer hu9mx2ypl56r9t9rcimgekfa3x1vx8',
+				'Client-ID': process.env.CLIENT_ID,
+				Authorization: process.env.AUTH,
 				'X-Requested-With': 'XMLHttpRequest'
 			},
 			body: `fields name, genres.name, aggregated_rating, platforms.name, platforms.id, release_dates.human, summary,screenshots.image_id, cover.image_id, artworks, involved_companies.company.name; where id = ${params.id};`
