@@ -12,8 +12,8 @@
 		"deploy": "git add . && git commit -m 'commit' && git push origin main"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "next",
-		"@sveltejs/kit": "next",
+		"@sveltejs/adapter-auto": "3.1.0",
+		"@sveltejs/kit": "1.0.0",
 		"eslint": "^8.16.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-svelte3": "^4.0.0",
