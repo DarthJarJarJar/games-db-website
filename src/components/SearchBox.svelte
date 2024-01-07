@@ -3,9 +3,7 @@
 	import { goto } from '$app/navigation';
 
 	function onSubmit() {
-		goto('/search/' + searchKey).then(
-            () => goto('/search/' + searchKey)
-        );
+		goto('/search/' + searchKey);
 		searchKey = '';
 	}
 
@@ -13,9 +11,7 @@
 		location.reload();
 	}
 	function onSubmitWhenOnSearch() {
-		goto('/search/' + searchKey).then(
-            () => goto('/search/' + searchKey)
-        );
+		goto('/search/' + searchKey);
 		searchKey = '';
 	}
 
@@ -24,7 +20,7 @@
 </script>
 
 {#if path.includes('/search/')}
-	<form class="d-flex" role="search" on:submit|preventDefault={onSubmitWhenOnSearch}>
+	<form class="d-flex" role="search" on:submit={onSubmitWhenOnSearch}>
 		<input
 			class="form-control me-2"
 			type="search"
