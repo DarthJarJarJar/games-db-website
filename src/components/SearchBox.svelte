@@ -3,7 +3,9 @@
 	import { goto } from '$app/navigation';
 
 	function onSubmit() {
-		goto('/search/' + searchKey);
+		goto('/search/' + searchKey).then(
+            () => goto('/search/' + searchKey)
+        );
 		searchKey = '';
 	}
 
