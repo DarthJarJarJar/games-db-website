@@ -343,6 +343,7 @@
 	let continents;
 
 	async function search(query) {
+		console.log(query)
 		await fetch(`https://api.igdb.com/v4/games/`, {
 			method: 'POST',
 			headers: {
