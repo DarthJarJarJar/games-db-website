@@ -20,7 +20,7 @@
 </script>
 
 {#if path.includes('/search/')}
-	<form class="d-flex" role="search" on:submit={onSubmitWhenOnSearch}>
+	<form class="d-flex" role="search" on:submit|preventDefault={onSubmitWhenOnSearch}>
 		<input
 			class="form-control me-2"
 			type="search"
