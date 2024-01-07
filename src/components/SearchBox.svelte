@@ -11,7 +11,7 @@
 		location.reload();
 	}
 	function onSubmitWhenOnSearch() {
-		goto('/').then(
+		goto('/search/' + searchKey).then(
             () => goto('/search/' + searchKey)
         );
 		searchKey = '';
