@@ -344,7 +344,7 @@
 
 	async function search(query) {
 		console.log(query)
-		await fetch(`https://api.igdb.com/v4/games/`, {
+		await fetch(`https://cors-dun.vercel.app/https://api.igdb.com/v4/games/`, {
 			method: 'POST',
 			headers: {
 				'Client-ID': process.env.CLIENT_ID,

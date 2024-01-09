@@ -6,7 +6,6 @@
 	let searchKey = '';
 	import { goto } from '$app/navigation';
 	import PopularGame from '../../components/PopularGame.svelte';
-	import GameCard from '../../components/GameCard.svelte';
 
 	function onSubmit() {
 		goto('/search/' + searchKey);
@@ -20,7 +19,7 @@
 	<h2>Upcoming Games</h2>
 	<div class="games">
 		{#each upcoming as game}
-			<GameCard {game} />
+			<PopularGame {game} />
 		{/each}
 	</div>
 </section>
